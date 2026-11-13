@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DIAMOND</title>
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0a0a0a"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><script src="config.js"></script><style>
+:root{--bg:#fffdf8;--cd:#fff;--tx:#0d0d0d;--mu:#6e6a60;--p:#9a6b12;--v:#5b4220;--g:#d4a017;--bd:#ebdcae;--sk:#00afca;--ye:#fec50c;--gr:linear-gradient(135deg,#0a0a0a 0%,#0f2d38 55%,#00a0be 100%);--gd:linear-gradient(135deg,#f6df9a,#d4a017 52%,#9a6b12);--bgo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23c9961c' stroke-width='1.2' opacity='.13' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 6l8 8-8 8-8-8z'/%3E%3Cpath d='M32 42l8 8-8 8-8-8z'/%3E%3Cpath d='M24 14C14 14 8 20 8 27c0 6 5 9 9 6 3-2 2-6-1-6'/%3E%3Cpath d='M40 14C50 14 56 20 56 27c0 6-5 9-9 6-3-2-2-6 1-6'/%3E%3Cpath d='M24 50C14 50 8 44 8 37c0-6 5-9 9-6 3 2 2 6-1 6'/%3E%3Cpath d='M40 50C50 50 56 44 56 37c0-6-5-9-9-6-3 2-2 6 1 6'/%3E%3C/svg%3E");--orb:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='6' viewBox='0 0 36 6'%3E%3Crect width='36' height='6' fill='%2300afca'/%3E%3Cpath d='M9 0l4.5 3L9 6 4.5 3zM27 0l4.5 3L27 6l-4.5-3z' fill='%23fec50c'/%3E%3C/svg%3E");--bo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 64 64' fill='none' stroke='%233a2600' stroke-opacity='.62' stroke-width='3.2' stroke-linecap='round'%3E%3Cpath d='M32 6l8 8-8 8-8-8z'/%3E%3Cpath d='M24 14C14 14 8 20 8 27c0 6 5 9 9 6 3-2 2-6-1-6'/%3E%3Cpath d='M40 14C50 14 56 20 56 27c0 6-5 9-9 6-3-2-2-6 1-6'/%3E%3Cpath d='M24 50C14 50 8 44 8 37c0-6 5-9 9-6 3 2 2 6-1 6'/%3E%3Cpath d='M40 50C50 50 56 44 56 37c0-6-5-9-9-6-3 2-2 6 1 6'/%3E%3Cpath d='M32 42l8 8-8 8-8-8z'/%3E%3C/svg%3E");--hero:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23f0cf7a' stroke-width='2' opacity='.35' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 6l8 8-8 8-8-8z'/%3E%3Cpath d='M32 42l8 8-8 8-8-8z'/%3E%3Cpath d='M24 14C14 14 8 20 8 27c0 6 5 9 9 6 3-2 2-6-1-6'/%3E%3Cpath d='M40 14C50 14 56 20 56 27c0 6-5 9-9 6-3-2-2-6 1-6'/%3E%3Cpath d='M24 50C14 50 8 44 8 37c0-6 5-9 9-6 3 2 2 6-1 6'/%3E%3Cpath d='M40 50C50 50 56 44 56 37c0-6-5-9-9-6-3 2-2 6 1 6'/%3E%3C/svg%3E");color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0a0a;--cd:#151515;--tx:#f5efe0;--mu:#b5ad9a;--bd:#3a3220;--p:#f0cf7a;--bgo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23d4a017' stroke-width='1.2' opacity='.16' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 6l8 8-8 8-8-8z'/%3E%3Cpath d='M32 42l8 8-8 8-8-8z'/%3E%3Cpath d='M24 14C14 14 8 20 8 27c0 6 5 9 9 6 3-2 2-6-1-6'/%3E%3Cpath d='M40 14C50 14 56 20 56 27c0 6-5 9-9 6-3-2-2-6 1-6'/%3E%3Cpath d='M24 50C14 50 8 44 8 37c0-6 5-9 9-6 3 2 2 6-1 6'/%3E%3Cpath d='M40 50C50 50 56 44 56 37c0-6-5-9-9-6-3 2-2 6 1 6'/%3E%3C/svg%3E");color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0a0a;--cd:#151515;--tx:#f5efe0;--mu:#b5ad9a;--bd:#3a3220;--p:#f0cf7a;--bgo:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23d4a017' stroke-width='1.2' opacity='.16' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 6l8 8-8 8-8-8z'/%3E%3Cpath d='M32 42l8 8-8 8-8-8z'/%3E%3Cpath d='M24 14C14 14 8 20 8 27c0 6 5 9 9 6 3-2 2-6-1-6'/%3E%3Cpath d='M40 14C50 14 56 20 56 27c0 6-5 9-9 6-3-2-2-6 1-6'/%3E%3Cpath d='M24 50C14 50 8 44 8 37c0-6 5-9 9-6 3 2 2 6-1 6'/%3E%3Cpath d='M40 50C50 50 56 44 56 37c0-6-5-9-9-6-3 2-2 6 1 6'/%3E%3C/svg%3E");color-scheme:dark}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font:15px/1.4 -apple-system,"Segoe UI",Roboto,sans-serif}
+#app{max-width:480px;margin:auto;height:100%;display:flex;flex-direction:column}
+header{background:var(--gr);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+header h1{font:700 20px Georgia,serif;margin:0;letter-spacing:.5px}
+.seg{display:flex;background:rgba(255,255,255,.2);border-radius:20px;padding:2px}
+.seg button{border:0;background:none;color:#fff;padding:6px 12px;border-radius:18px;font-size:13px}
+.seg .on{background:#fff;color:var(--p);font-weight:700}
+main{flex:1;overflow-y:auto;padding:14px}
+nav{display:flex;background:var(--cd);border-top:1px solid var(--bd)}
+nav button{flex:1;border:0;background:none;color:var(--mu);padding:8px 0 10px;font-size:12px;position:relative}
+nav button span{display:block;font-size:20px}nav .on{color:var(--p);font-weight:700}
+.bd{position:absolute;top:4px;left:55%;background:var(--p);color:#fff;border-radius:10px;font-size:11px;padding:1px 6px}
+.hero{background:var(--gr);color:#fff;border-radius:20px;padding:20px;margin-bottom:14px}
+.hero h2{margin:0 0 6px;font:700 24px Georgia,serif}.hero p{margin:0 0 12px;opacity:.9}
+.btn{border:0;border-radius:14px;padding:10px 16px;font-weight:700;background:linear-gradient(135deg,#f6e3b0,#d4a85a 52%,#a8792f);color:#1a1004}
+.btn.s{background:var(--cd);color:var(--p);border:1px solid var(--bd);padding:6px 10px;font-size:13px}
+h3{margin:16px 0 8px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:12px;margin-bottom:10px}
+.svc{display:flex;gap:12px;align-items:center;width:100%;text-align:left;color:var(--tx);font:inherit}
+.svc i{font-style:normal;flex:none;font-size:28px;width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#f7ecd2,#e8cf96)}
+.svc b{display:block}.svc small{color:var(--mu)}.pr{margin-left:auto;color:var(--p);font-weight:700;white-space:nowrap;font-size:13px}
+.svc{position:relative;padding:14px;border-radius:20px;background:linear-gradient(135deg,var(--cd),rgba(201,161,90,.08));box-shadow:0 6px 18px rgba(201,161,90,.15)}
+.ic{position:relative;flex:none;width:72px;height:72px;border-radius:50%;padding:3px;background:var(--gr);box-shadow:0 0 14px rgba(201,161,90,.45);display:block}
+.ic u{display:block;width:100%;height:100%;border-radius:50%;border:2px solid var(--cd)}
+.ic em{position:absolute;right:-4px;bottom:-4px;width:26px;height:26px;border-radius:50%;background:var(--g);display:grid;place-items:center;font-style:normal;font-size:14px;border:2px solid var(--cd)}
+.svc b{font-size:16px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gal div{aspect-ratio:1;border-radius:16px;box-shadow:0 4px 12px rgba(201,161,90,.25);border:2px solid var(--cd)}
+a{color:var(--p)}
+#chat{display:flex;flex-direction:column;gap:8px}
+.m{max-width:85%;padding:9px 12px;border-radius:16px;white-space:pre-line}
+.m.b{background:var(--cd);border:1px solid var(--bd);border-bottom-left-radius:4px}
+.m.u{align-self:flex-end;background:var(--gr);color:#fff;border-bottom-right-radius:4px}
+.ch{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.ch button{border:1px solid var(--p);background:var(--cd);color:var(--p);border-radius:16px;padding:7px 12px;font-size:14px}
+.inp{display:flex;gap:6px;padding:8px 14px;background:var(--cd);border-top:1px solid var(--bd)}
+.inp input{flex:1;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:18px;padding:9px 14px;font-size:15px}
+.row{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.new{border-color:var(--p);box-shadow:0 0 0 2px rgba(201,161,90,.2)}
+.tag{background:var(--p);color:#fff;border-radius:8px;font-size:11px;padding:1px 6px}
+select{background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:4px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.cal button{border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:10px;padding:6px 0;font-size:12px}
+.cal .off{background:#ddd;color:#888;text-decoration:line-through}.cal .hd{border:0;background:none;color:var(--mu)}
+.cal .bk{border-color:var(--p);font-weight:700}
+.sw{width:44px;height:24px;border-radius:12px;border:0;background:#cdbfa5;position:relative}
+.sw.on{background:var(--p)}.sw:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}.sw.on:after{left:23px}
+#toast{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);left:50%;transform:translateX(-50%);background:#17120d;color:#fff;padding:10px 16px;border-radius:14px;display:none;z-index:9;max-width:92%}
+
+header{gap:8px}header h1{flex:1}.hb{border:0;background:rgba(255,255,255,.2);color:#fff;font-size:20px;border-radius:10px;width:36px;height:36px}#st{font-size:14px}
+#ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:20}
+#dr{position:fixed;top:0;bottom:0;left:0;width:78%;max-width:320px;background:var(--cd);z-index:21;transform:translateX(-105%);transition:.25s;padding:calc(env(safe-area-inset-top,0px) + 16px) 12px 16px;overflow-y:auto}#dr.on{transform:none}
+#dr h3{margin:0 0 10px;color:var(--p)}#dr button{display:block;width:100%;text-align:left;border:0;background:none;color:var(--tx);padding:13px 8px;font-size:16px;border-bottom:1px solid var(--bd)}
+.f{width:100%;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:12px;padding:10px 12px;font:inherit;margin:6px 0}
+.pf{display:flex;align-items:center;border:1px solid var(--bd);background:var(--bg);border-radius:12px;margin:6px 0;padding-left:12px}.pf span{font-weight:700;color:var(--p)}.pf input{flex:1;border:0;background:none;color:var(--tx);font:inherit;padding:10px 12px;outline:0;min-width:0}.mu{color:var(--mu)}.pe{font-size:30px}.bar{height:10px;border-radius:6px;background:var(--bd);margin:8px 0}.bar i{display:block;height:100%;border-radius:6px;background:var(--gr)}
+.st button{border:0;background:none;font-size:28px;color:#ccc}.st .on{color:var(--g)}label{font-size:13px}
+.card{overflow-wrap:anywhere}
+
+nav{padding:4px 4px 2px}nav button{font-size:11px;letter-spacing:.2px}nav button span{display:flex;width:max-content;margin:0 auto 2px;padding:5px 16px;border-radius:16px;transition:.2s}nav svg{display:block}nav .on span{background:rgba(201,161,90,.14)}nav .on svg{stroke-width:2.1}
+.bd{top:2px;left:58%}
+#dr button{display:flex;gap:14px;align-items:center}#dr svg{color:var(--p)}
+.svc i.si{flex:none;width:54px;height:54px;border-radius:16px;background:var(--gr);color:#fff;font-size:0;display:grid;place-items:center;font-style:normal;box-shadow:0 6px 14px rgba(201,161,90,.3)}
+.hb{display:grid;place-items:center}
+.pc{padding:0;overflow:hidden}.car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.car::-webkit-scrollbar{display:none}.car>div{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/3}
+.dots{display:flex;justify-content:center;gap:6px;margin:-22px 0 8px;position:relative}.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.6)}.dots i.on{background:#fff;width:18px;border-radius:4px}
+.ph{aspect-ratio:4/3;display:grid;place-items:center;background:linear-gradient(135deg,#f7ecd2,#e8cf96);color:var(--p)}
+.pi{padding:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.pth{display:flex;gap:8px;margin-top:8px}.pth>div,.pth .add{width:72px;height:72px;border-radius:12px;position:relative;flex:none}.pth button{position:absolute;top:2px;right:2px;width:20px;height:20px;border:0;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;line-height:1;padding:0}
+.pth .add{border:1.5px dashed var(--p);color:var(--p);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+#lb{display:none;position:fixed;inset:0;background:#000;z-index:30}.lbx{height:100%}.lbx>div{aspect-ratio:auto;height:100%}.lbk{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;border:0;background:rgba(255,255,255,.18);color:#fff;border-radius:50%;width:42px;height:42px;display:grid;place-items:center}
+
+header h1{font-size:26px;white-space:nowrap;text-align:left}
+body:not(.mst) #st,body:not(.mst) .seg{display:none}
+body.mst header h1{font-size:15px;overflow:hidden;text-overflow:ellipsis}
+.gal div{cursor:pointer}.gx{position:absolute;top:3px;right:3px;width:24px;height:24px;border:0;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;font-size:16px;line-height:1;padding:0}
+.rvs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}.rvs::-webkit-scrollbar{display:none}
+.rv{flex:0 0 84%;scroll-snap-align:start;background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:12px;box-shadow:0 4px 12px rgba(201,161,90,.1)}.rv p{margin:6px 0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.rvi{height:120px;border-radius:12px}
+#lb{height:100vh;height:100dvh}.sl{overflow:auto;display:flex;align-items:center;justify-content:center;overscroll-behavior:contain}.sl img{max-width:100%;max-height:100%;object-fit:contain;transition:width .2s}
+.sl.z{align-items:flex-start;justify-content:flex-start}.sl.z img{max-width:none;max-height:none;width:260%}
+.lbt{position:absolute;top:calc(env(safe-area-inset-top,0px) + 22px);left:16px;color:#fff;font-size:14px;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:12px}
+.lbh{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);left:0;right:0;text-align:center;color:rgba(255,255,255,.7);font-size:12px;pointer-events:none}
+
+.pc .car>div,.pc .ph{aspect-ratio:1/1}
+.pm{position:relative;display:flex;align-items:center;justify-content:center;background:var(--bg);cursor:zoom-in}
+.pm img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.pm::after{content:"⤢";position:absolute;right:10px;bottom:10px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center;font-size:16px}
+.dots{margin:-26px 0 10px}
+
+#toast{z-index:40}
+#fs{display:none;position:fixed;inset:0;z-index:25;background:var(--bg);flex-direction:column;height:100vh;height:100dvh}
+.fsb{display:flex;align-items:center;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px 12px;background:var(--gr);color:#fff}
+.fsb button{width:40px;height:40px;border:0;border-radius:12px;background:rgba(255,255,255,.2);color:#fff;display:grid;place-items:center;padding:0}.fsb b{font-size:19px}
+.fsc{flex:1;overflow-y:auto;padding:14px 14px calc(env(safe-area-inset-bottom,0px) + 24px);max-width:480px;width:100%;margin:0 auto}
+.cw{position:relative}.ar{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:24px;line-height:1;padding:0 0 3px;z-index:2}.ar.l{left:8px}.ar.r{right:8px}
+.car{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch}
+.gal div{position:relative}.cnt{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.6);color:#fff;border-radius:10px;padding:2px 7px;font-size:11px;display:flex;gap:4px;align-items:center}
+.pth{flex-wrap:wrap}
+.chat{max-height:48vh;min-height:150px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:10px;background:var(--bg);border:1px solid var(--bd);border-radius:16px;margin:10px 0}
+.bb{max-width:84%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.4;overflow-wrap:anywhere;white-space:pre-wrap}
+.bb small{display:block;font-size:11px;opacity:.7;margin-top:3px;text-align:right}
+.bb.mine{align-self:flex-end;background:var(--gr);color:#fff;border-bottom-right-radius:4px}
+.bb.oth{align-self:flex-start;background:var(--cd);border:1px solid var(--bd);border-bottom-left-radius:4px}
+.bb img{max-width:100%;max-height:190px;border-radius:10px;display:block;margin-bottom:4px}
+.ob{align-self:center;width:94%;background:var(--cd);border:1px dashed var(--g);border-radius:14px;padding:10px 12px;font-size:14px;line-height:1.45}
+.os{display:inline-block;margin:6px 0;padding:2px 10px;border-radius:10px;background:rgba(201,161,90,.28);font-weight:700;font-size:13px}
+.cin{display:flex;gap:8px;align-items:flex-end}
+.cin textarea{flex:1;margin:0;min-height:44px;max-height:110px;resize:none}
+.cin .btn{padding:11px 16px;font-size:18px}
+.cph{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--bd);border-radius:12px;background:var(--cd);font-size:20px;cursor:pointer;flex:none}
+.chr{display:flex;align-items:center;gap:12px;cursor:pointer}
+.av{width:42px;height:42px;border-radius:50%;background:var(--gr);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;flex:none}
+.chm{flex:1;min-width:0}.chm small{display:block;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chr2{text-align:right;font-size:12px;color:var(--mu);display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.ub{background:#d33;color:#fff;border-radius:10px;min-width:20px;padding:1px 6px;font-size:12px;text-align:center;font-weight:700}
+.unr header .hb{position:relative}.unr header .hb::after{content:'';position:absolute;top:3px;right:3px;width:11px;height:11px;border-radius:50%;background:#e33}
+.pr2{display:flex;gap:14px;padding:14px;align-items:stretch}
+.th2{flex:none;width:88px;height:88px;border-radius:14px;background:var(--bg) center/cover no-repeat;position:relative;display:grid;place-items:center;color:var(--p);cursor:zoom-in;border:1px solid var(--bd)}
+.th2 span{position:absolute;right:4px;bottom:4px;background:rgba(0,0,0,.65);color:#fff;border-radius:8px;font-size:12px;padding:1px 7px}
+.pr2 .bx{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.pr2 .nm{font-size:18px;font-weight:700;line-height:1.25}
+.pr2 .ds{font-size:15px;color:var(--mu);line-height:1.4}
+.pr2 .pp{font-size:22px;font-weight:800;color:var(--p)}.pr2 .pp s{font-size:15px;font-weight:400;color:var(--mu);margin-right:8px}
+.pr2 .btn{padding:11px 20px;font-size:16px}
+.stp{display:inline-flex;align-items:center;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--cd)}
+.stp button{width:42px;height:40px;border:0;background:var(--cd);color:var(--p);font-size:22px;font-weight:700}
+.stp b{min-width:34px;text-align:center;font-size:17px}
+.cartc{border-color:var(--g);box-shadow:0 4px 16px rgba(201,161,90,.22)}
+.crow{display:flex;align-items:center;gap:10px;padding:12px 0;border-top:1px solid var(--bd);margin-top:8px}
+.cn{flex:1;min-width:0;font-size:16px;font-weight:600}.cn small{display:block;font-weight:400;color:var(--mu);font-size:14px;margin-top:3px}
+.cx{border:0;background:none;color:var(--mu);font-size:24px;width:34px;height:34px}
+.btn.wa{width:100%;margin-top:12px;padding:14px;font-size:17px}
+.mph{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mpi{aspect-ratio:1;border-radius:14px;background:var(--bg) center/cover no-repeat;position:relative;border:1px solid var(--bd)}
+.mpi button{position:absolute;top:4px;right:4px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;font-size:17px;line-height:1}
+.lgo{width:34px;height:34px;border-radius:50%;vertical-align:middle;margin-right:8px;box-shadow:0 0 0 1px rgba(227,190,124,.7)}
+.gh{font:700 13px/1 -apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:var(--p);margin:20px 2px 10px}
+.mst #seg,.mst #st{display:none}
+.mpq{font:italic 17px/1.55 Georgia,serif;margin-bottom:16px;background:linear-gradient(135deg,var(--cd),rgba(201,161,90,.08))}
+.mpf{margin:0 0 16px;background:var(--cd);border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(201,161,90,.15)}
+.mpf img{width:100%;display:block;max-height:440px;object-fit:cover}
+.mpf figcaption{padding:12px 16px 14px;font:italic 16px/1.45 Georgia,serif}.mpf figcaption:empty{display:none}
+.mpa{display:flex;gap:10px;align-items:flex-start}.mpa img{width:84px;height:84px;object-fit:cover;border-radius:12px;flex:none}.mpa .f{margin:0}
+.sph{display:flex;gap:6px;overflow-x:auto;padding:0 4px 4px;margin:-2px 0 12px}.sph img{width:92px;height:92px;object-fit:cover;border-radius:14px;flex:none}
+
+header h1{font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}body.mst header h1{font-size:15px}
+.lgb{display:flex;align-items:center;gap:5px;border:0;border-radius:14px;background:rgba(255,255,255,.2);color:#fff;font-size:13px;font-weight:700;padding:8px 10px}body.m .lgb{display:none}
+#lgp{display:none;position:fixed;z-index:35;right:12px;top:calc(env(safe-area-inset-top,0px) + 56px);background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:8px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.lgs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}#lgp .lgs{margin:0;flex-direction:column}
+.lgs button{display:inline-block!important;width:auto!important;border:1px solid var(--bd)!important;background:var(--cd)!important;color:var(--tx)!important;border-radius:16px!important;padding:7px 14px!important;font-size:14px!important}
+.lgs button.on{background:var(--gr)!important;color:#fff!important;border-color:transparent!important}
+
+body{background:var(--bg) var(--bgo);background-attachment:fixed}
+header{position:relative;background:linear-gradient(135deg,#050505 0%,#0e1d24 60%,#0a5568 100%)}
+header:after,nav:before{content:'';position:absolute;left:0;right:0;height:6px;background:var(--orb) repeat-x left center/auto 6px}header:after{bottom:0}nav{position:relative}nav:before{top:-6px}
+header h1{letter-spacing:.16em;font-family:Georgia,serif}
+.btn:not(.s){background:var(--bo) right 12px center/20px no-repeat,var(--gd);padding-right:38px;color:#140d00}
+.hero{background:var(--hero) right -16px top -16px/150px no-repeat,var(--gr)}
+.tag{background:var(--sk);color:#00222b}
+.new{border-color:var(--sk);box-shadow:0 0 0 2px rgba(0,175,202,.22)}
+.lgo{box-shadow:0 0 0 1px rgba(240,207,122,.85)}
+#dr{background:var(--cd) var(--bgo)}
+</style></head><body>
+<div id="toast"></div><div id="lgp"></div><div id="fs"></div><div id="lb" onclick="if(event.target.id=='lb')lbc()"></div><div id="ov" onclick="dr(0)"></div><aside id="dr"></aside>
+<div id="app">
+<header><button class="hb" onclick="dr(1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" x2="20" y1="7" y2="7"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="14" y1="17" y2="17"/></svg></button><h1><img class="lgo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAIAAABJgmMcAAAiw0lEQVR4nO2deXRUx5X/762q914vUmttCQESSCAQMmIxxgZsjyGJs2OS/GIbe2wnM/bMBDIzycRJzHh+sY3zS47txPkl5zcDyYyd8Ta248w4A4zjTLyAbQzY7AgLITAChNbW0mqpl/deVd3fHy020ZK6heRlDt/Th8NRq/XqffrWvbeqbtVDn88HlzR2Yh92A/6n6RLQMZb4sBswWIjn/AuACHTuuwBEAz8hOvvvR0cfPtAktSRBTSAVaA2uJAAAPcRnGACAIZAxEBwYAiRBE3zoeD80oIgDIFwFtk2kAAC4gXlZmO2DKcXClTQpyEqDzJWEp5EZAptCujmkDYEn2lVfDHr6SbkEAMjBMtHgAACaPjTL/aCBJjkSgO2CaxMA5OXgZVPEtImsqozNmMxLi5jPgtws1ASCo8EHd3lXgVTEEML9FLOhqUM3nFL1J/X7LfpYq+rpJQAwLLQMwA+DLH5gaRNDYAwSDjg2AYOyIraoWiyYwRfOFMX56DWR8zONQgBEBFeB1IgwwDT5H8HI4ElMZ2kpBXGH2rtp52G5u0HtqJMnOzRoMC30mKA16A8K6wcBlDFAgJhNyoWJQXbtHLFsvrh8Oi/MYYyBJuAcNaDtQLhPn2x1envdQ0fjSHQqpJo7gPOzRJWCSUUwOcgJcdZ0b06OUVZi5mYzywQGpBQxBK2hs1fvOao275VvHZAtIc0N8FlIAHoopzx2Gl+gDAEQ+mMEGi6r4DcsMb6wyJgUZECACMhY1Ma2Tnfn/ujho9H6JjgRFiEdcPz5MLECECFYBEUTQEo440SFgI42CHUAEbQcM6PdQRaZkiurSmHmdP/Cuf4JhYbfItKaCAChOaRf2uFu3Oa+d0wBgywfAo2vtY4X0KSvjCZIE1w3R9ywxPzUApHjR1eSECyhcG+d/e7e3ndq5aEebzgwFWbUwJSpEAwKA5lhYLgTE3HsDkGoHfg5ybLSECym/CB5vJRbqF1XugShEJw4Dg21uZHjs/LiV9WIK+fnzK+2PJyk1IbA3ii9ultu3Oa8cUAyBL8Hx8+3jgtQzsFxwbapagr/xnJr+RIjGR+4YM2d+r82RzbviO3uzJYzF0LNPCwvN1SCtTdjYwM2NkBPN/T1olQjXoUEh+wcyMun8hlUPkMXT3K5hxoboXafOLxzQWHfskW+Ly4LTCpkSupkJNy0zf3lJrv+hLIsNA1QI18kY40x0GRG2R+lYB5bvcK6aanhMVEqMkxe1yif29C1eZ9qyZ4BS68XNbN5NML2vYMHd0PrqSRBEgKEAM4B2UAMSpFZ4sBbpEEpkBKlhCTfksk0e4Ged5XyB2TtQdjyysS+hmXz+C0rCqrLhesowTHh0Atb3HUb7FCPzvIjjbWpjiVQzsCRYNt0wzXmPSutiQXMdsk0+aGT6qnfdry0l/dXXQ2f/JSVl8O2vY7738W2FgAg0wDDBMZOp+YZ3l/yO0QErcF10HEBgCZMpLlX6iWfsHt64bVXs+rf/sJ8dceNRbPKuOMoy8CWLv3w8/bGrY5loSlAjV2wGjOggkMkSoUB/MEd3uVLDNsh08BQH/7y+a4XtrixKz7DVnzZiIbZyy/ie3vQcckywbAGUp+xMpKBIReCa6PtkGnQZZfrz33F9efqDb/z7frvm5Ya31hZEMwmxyXLxE3b3B8+Fe+MUMCfjo9JrwkXDzQZgaNRWlgtHvoLb0UJS7gkBH/mv2O/fC7cPnkev/FWYXD2n//GavcAAvn8gAxIj2POjZi8BMaiQKBrLtdf+lPpKvXbZ4tP7fvGLbm3fcYnpfIYeKxVr/mX+M466fcjjMXMwMUCZQy0hoRNf/Y567s3WwBgGXisHf/P+vYtR7z4Z6uN8gr2/GO8djcwJF8WEAGNfzZ4RsgAEWP9oEnVLNAr73Ibj9G/rltaGf/fq4orisl2CQB++hv7X1+2PRYmb+eiLngxQBkDV4Lt0I/v8t7xabOnnwJ+tmmb+8A/dXZWXWPecjvueINveh5Bkz8b9AeL8lwhA4YY7SNgavlKWnSd89zThfVbH/hm4fIlRiSq87LwqT869z4Wt0w0xEUxHT1QziBuQ8APP1vtu7ZGxG3igv/03yK/fjmKd/y1KJ/Gf/0L1tRIWVkAH8gYZUQxBgDY369Ly9Wff0s2vk9P/eOff87/3T8NKKm8Fr5VK7+zLhaJgtcafZgaJVDOIOFAthce/55/fiV3XIrYfPWP2t4NFRrfuRdPvC+e+idkSF4/KDnKpo2TuMB4lDTJO75JU6a5P/vxlcHOdf8wIWAp08C9R9SdP4n2xcFjjpLpaIAyBgmbAj58/Pv+ORVcSmoOs7sfad3rvdz6q7+B/3hGbHuN/P6BVOYjKMaACKNRueST8L9us3/1/+bH9zz6/ZJJuVoIPHBM3flINBIjj4WjaH7GQBkDKcHvgce+658zjQPRgZPsrvtbu6qWmHf8Jf/5g6zpGGVnj8soZGzFOfb16dIK9e37nKf+uaB+22NrS+aUaUA88L6666fRaAJE5v40szWlpM0lHHp0tW9+JZeSDpxkd97f2jP7GvOOv+QPrWGnGik78DGgCQBKUXaAnWrkD60x7/jLntnX3Hl/64GTTEqaX8kfXe1LOKT1QFKYvjIECpCw6Ud3ea+tEbZLzWF25/2t4dnXiC/dwh9aw3pClJX1kXOaw0hJyspiPSH+0BrxpVvCs6+58/7W5jCzXbq2RvzoLm/Cpgx5ZgKUc+iP0tc/a33t02bcpj6bf+eR1u6qJeLWu/gv1rLuEHl9Hw/bPFdKkdfHukP8F2vFrXd1Vy35ziOtfTaP2/S1T5tf/6zVH6WzM99pKF2gnEF/lK6oFt9baYX7iBt89Q/b91nzBnp6uIt8H0OaSSlFPh8LdyX7/j5r3uoftnODh/voeyutK6pFf5R42oaX1i8igishP4AP/4UXCLKz2E+ejrwbKrBWfYv/fC3rav9Y2ua5StppVzv/+Vpr1bfeDRX85OlIdhYDgof/wpsfQFem60zTBZqw6b47vBUlzDJx4zb3iT/EjLvvxRefZk2N5M/6eNNMSinyZ7GmRnzxaePue5/4Q2zjNtcysaKE3XeHN2HTmAFNus4brjGXLzYSDh1rhwf+sRNvW40nj/K3X/94ZEhpSinKzuZvv44nj+Jtqx/4x85j7ZBwaPli44ZrzDSd6QhAEcFxIJjH7llp2S4Jkz+4PtQ1YwmfPl08vZ78/v85NJNSivx+8fR6Pn1614wlD64PCZPbLt2z0grmMccZueOPAJQh2A6tXmFNLGCmic+8HHvziM+87Wv88Z8DYxknaR8LIQJj/PGfm7d97c0jvmdejpkmTixgq1dYtkPsYoAyBrEEzSzjNy01bJdCEVz/bJh9/a9wxxbWdBw8no/oyPIipTV4PKzpOO7Ywr7+V+ufDYciaLt001JjZhmPJYgNa4TDvklABKtWWB4TTZOvf667Y/JcUTGNb/rNqDt7cjWUMczwNVAnkdkLR9uFlCK/n2/6jaiY1jF57vrnuk2Te0xctcIiSrXKdY6GLMVhDGJxuqZGLF9sSEVHT6kXtkj+/Vv5848hAiGOYnYbEZRGx9VaK8ARWnb6MwAEiMg4V0ohpEuIgBCZZSDHUU3DIyICf/4xftOtLzxy702fV9NLYPli48U3xdZa6fMOOW8yJFAE0ApuuNpEBNPkT/62Pb7wessUrHY3ZWWDztg8EUEqzPe5M2eYhpVNWkGadBC11vFYf5bfq5ROx+iIgDGmpFN30gknTMEoY6hak9fPaneLL90aX3j9k7995eHvFpPWN1xtvrlPDtOE1ECRQdyG6gp+/QKhNBw+IV/ay/gDX8bnfnlOZUyGQqbd6N/dVrPkimlTZ183YdJE6Tg4Eh6tten17Xj9D01H982vKcrPy3ZdOeKnAFBK51BD9479oR/9+jB4fKNaLCDgHH/3DL/lGy898NodjXJmKbt+gaiu4A1N2rJS/8nUPpQhSJdWLDFy/GgI9uyGrmjVYhEN84N7yesdRSzijMVi9p9eH/ybb944eWp5/Xt1PKuQGdncCgzzYma2JxAMdfQm4r3Xffoz9e93C8uDwmLCQmGmfDFhAje8Wf7Gk+G8khlrvn/7yk8WxGI2Hz6UpJTW5PXyg3tFNBytWvzshi5DsBw/rlhiSHfIcJ/iMsncc0KQfX6R4Uo41alf36fZJ69nv/93GEWzADjD/oRcWmM88Pc3E5olE4tkvKPt2PvCFEq6WsmUL1JSSRc4r9399tSy4gklQeHJa2kOGYJrrUhTypfWhICxaDTUIysrp2gQa//+5qU1Rn9C8hFTntSEGPv9v7NPXv/6Pn2qU7sSPr/ImBAcMidNAYgxsG26bo4oDTJD4H9tjrRlV4q8ANbtH4V5MgZxF8oL3B/d88XSKeV2IkGEVVVT39u3A4WRrFtMKQIwvd6WxmPkhEunlMaj0dk1s98/3s050DnlDYNeBOTxGEeOtk+ZNiMryxOPxUqnVvzoni+WF7hxN3N70Jq8XqzbL/ICbdmV/7U5YggsDbLr5gjbTp0/pfgZESCDZfOEJkgotnl7DK/7FN++GR0n0xYhgtTMz6Jr//bqxdcu6uvrF4LbtlNaNpnryPt1Bw2fTw/9DRHg/nfemDu3UkrlunLixCLDm9/a2mWaxlBBRgje09MbjorZs6tisYQQoq+vf/G1i9b+7dV+FpWaZZxIMYaOw7dvxus+tXl7LKGYJlg2TyBLneYMBoQItgOTi9jllZwh7K5L7O4KsDk1sPcdsszMvSfTbnz1jdNuvvmzkUiMMQQAREzYbnX19IbaXVpTygijtTa83sb6Qz5TFgQLk4FISlk9+7Kjjd2cQcpqek1kGqLhaEdl1Sx2+oYZw0gkdvPNn1194zTtxjPe+KI1WSbsfYfNqdndFdhdl2AIl1fyyUXMTtXrB/91xsB1aVG1KMxhwNjOPRE5c6GIRlh7KxhWRrknYyxuuyuWBNbcfYsjk8lrEihIVxYUFvhM2Vh/yPB6LzRSBNCaGg7umlU9zbZdhoiIjuMkjbSlpdM0Uhip4LynpzchPRUVpYmEfeb7QyBH4pq7b1mxJBC3XZZRPyMCw2LtrSIakTMX7twTAcYKc9iiauG6KXr9BT8gAIArZnDGIWbjO7Uu1Mxle3ecfS89cYYxWy+cRg/ft9LyBZR0z7VEhmg77qzqaYcP7tIaBhmp1trw+Rrr63yWLCgskK6Egb02A0Z6vKmX88FGqoks64x5npfNI6KSruULPHzfyoXTKGbrDAMUAQDbuwNq5r5T68ZsZByumMFTIjkPKCJICXkBXFgltIa2kFsX9mJ5OR7cQ4aRvnkyBnEXy3Ljj9y7vKxieiKRGGwUp420MIe9t/sdw+8/10gZY07Crj+wY+68WYmEw07ffNJIJ00qyiksPX683WOZZ/J1IjANo6WlU/Pc6dOnxOM2Ox8ZYyyRSJRVTH/k3uVlufG4ixmYKREZBh7cg+XldWFvW8jVGhZWibwAygsmngcDtV0qn8Am5CFnuPNAf2/OVEMmoL0FTDNNoIjgKpbFo/d9c/G11y2ORmM81QICYxhP2FXVlSeOHHBi8TPEtdbC5zu0f08wzwoEstX5MwaIzLadGTNnNDZFtD57NwTEORw51lU9+zKtVcrIwzmLRmPXXrf4vm8uzuJRV6UdoIjANKG9xZCJ3pypOw/0c4YT8rB8ArPdwRPPg4FqDdMncY+JGrH+SAIqa1h7M7oZZRyMZHzVVytuv315fzQxTKO10n6/v7jQd2j/HnE63DPGnFi86f2DVdXTYxcYGiJIKfMLAvlFpcePd1imQURJ82xt7TK8+RMnFtn2kAMwROiPJm6/ffmqr1aQzCRAMYauy9qbobKm/khCI3pMnD6JX7jOnMKHVpUxziHhYMMpgilT8fgRSHsqhDGMJQYCke0CUOogfuaX4wl75qzpJ4/WOvEEY0wrJfz+Q/v3FBX6/P4snaoaBpHZCad6dtXJlmjSSAlICEyap5TDDUwREYhsF5IBKpZwWZrOlAgQ8fgRmDK14RQlHOQcqsrYCD6UNHADKidzAAj3qeNhBsFCbGwgPkTSNehvMYw7NL8cHrpvpeUPKOniSM3VSvt8vrLJefvfeVv4fIzzvu6e5saDl82ecaEfTGrASPMC+UWTjx/vsAxhGUbj8bbsvEkTJwYdxx0GKAAgQyVdyx946L6V88sh7lBaTImIM2xsgGDh8TAL9ykAqJzMuTF4RH8WKCJIBblZrCzIALCpxemgHGEw6OkGMXJEYgiuYkFv7JE1n5k6rTIRvyAQpfwUw3jcrpo1vb2pPtwREtmBAzu3TZmcb1kpcqlzmsps26meXdXUGlVKaa0aT0Zq5s4ekebpi7JEPDF1WuUjaz4T9MZclQZSIhAG9HQLg3VQTlOLA4BlQZabxaQ6r9efd89KQ8CHPg8AQm/Edf35KDhEwsBH2MGYHBGh23f/6gXXLl0SifQhgk5PSikANqU0eOjAbrs/2tl8tHza1Gg0BkBDfYRIO46Tm5MVyCtpaetuaevOyZ+Yk+O3bYeG/NB5QoBIpO/apUvuW3UFun1pjaC4gEgYBXf9+b0RFxB8Hgj4cJBbOksKEVxJU4oxNwsJsP5oHEoqWG83ak2DNllf+P0BItnfuWPWN75xiyKelSVG7OznfZygZm7129sObv3jS/Pnz/QFAm7cHvEvMMauXLzwzVdfRoQ/+dR1wjACgex0p1gBNBFjfNXqlc0d0UefPUpgjpBoI6LWrLcbSirqjx6//urs3CycUoyNrWSZZ9PewabnuKA1sOS+dEBMxIFo+FYyhISEK6bCldU5f3h5s2s7jGc2YCYC0zRamtuOHj2hl1118EBtOj1Xa/J6rbpDp4iAG28nEgnEzIaVWmvDtK6oyp03BXYdB48YdpMdAhBhIg6AQAN7IB138G+dD5RgchCFAFdBc4ggWATdoYE7HqZZBAan+lbjtxvfXbFEa2BE6ZYFnGlsjMjP+MQ8y9P/pje9z2oCCyDHoJ4ueG/bKYIRutEgEQACcqa2N6jDbZbBaIQti0kI3SEIFjWHyFUgBEwODr7oeV0eCEqLmMExprCpXcOsCXjiQDqNYwhxB17c5c3Jga9ex5Qe0axT3J5gFI6Rz+/PyRrsmIa8LgNHxnKyhWl6Ml3kIEKD09ZD9ksHtCtJ8LQyQwy1wZQ5TYe0q9HHsbRoYN/qGQ3u8q5MfnVgCAApQaS1oZ4IBAel6fFXQEr5lWtZ8ttO306JAAV4DGrpcAI+071gBHKhGINIv47HKc9HUmaGU2vwWrC93n7mTU2AadIEABACpDTEwBqje0HpZorpu6SSLjT98TsRcAbI4InN+Mou7bMyW3hCBNKQ5YOeiErHtolAcOzo0qCRMczoWprAY8LhZufFd7XSKNJKss+5MJ4NQSNP312MiCAZjZ7eAm/Xam+6o/8BKQ1+L8YTMhofoZgATsfjjm5pcEaUQVmsJvAY0NDi/Pp11RNFc/hAlLkGN/w89kQZdFoAGAhQ0B3F/7sRth/UnkyYEoDgwBmF+7QYqSyLIzgu9faRx8T0iZxLs6sPrVHQRIRzQu6FdzcY6HneQQiQGdd3awJLQDiWMdOkg/F7oKtXMhyhPIFz6OpVtg2GSBfoYJrGqGxTShDivEhzvs4CTR6B0NShXUUGo9JiBu1tFJyQ+TVHz1QpCPgg3KvksLsFkqdqdHYrgekkrAAANCY0ASg4AdrbSouZwchV1NSh4fxAM3je91SIpASDw6QgQqgD8oMAmUTr0xodU01gmaiUikT1MG40eZxBV6+2DKb1yA5UE5gCL5ZmEkJ+EEIdk4JocJASToUGp4eDW20akDxYZcCJeryDD/dKW6NjyhhYBnX2KDF0URJnEE/oaAysNBxokmZXn/vsWyrUh5Y52ihEAIjk8SZH2pqAMTCNC9p/9vcJDIEn2incTwhUNd0Lrcd0Tj6xjNKKwTeTZPrzjbD9oDZGCgLJGW6/F8IRNZTdUbK/9yjbBsFHSJiSNHv63Se3uM3d6DUuogKTiBjTOfnQeqxquheBwv10op0MgUN2ec4gEqNYAoAgJ2AY0W6SCgK5F7P1KMm0J4a/2AT1J8hnjXBLWkOWF6IxGXcg5fQIATAGnT3aYDh8wnSG5hOb3fdOjd5vDkhJCOSSVEa0OydgAEEsAZHY4A0i51mo4BDu1ydDGoBKJ5pF2CtdDXn5IN2LKVZOMu2K4i9/T40t5BmWqSYwDSTQvX0qZU07Q5CKusLKY7JhAA2i6Rt1T08KEaQLefnS1UXYWzrRBKCTIR3u14NGWeevKTFQLhw5pQAgN5tPzdUQ6qTyGagy36J3vjSBR0BdM/70P+hE63BMk8lTlgc6uhVnKdwoZ9AX1f1RsIae9aaxpQnJlWhN5TMg1Dk1V+dmcwA4ckopF3AoCz39Sag/qZUCj0kzJiOcOE5TK0eR4V8oTeCz4FDLyEyTvb63T11IIelAu8IaaMgRZ3JU2tM3djRh4HumqZVw4viMyegxSSmoP6kvHCWfv6ZEwBgcbVYJhxhRVaUHjtTq4klkXIwzPyut02KqNXgtdFwZvaCgPZl9dPcqS6R2oEnicUc+9cbY0QQArckwdPEkOFJbVelhRAmHjjarCwP2YKCWgY1tuq2HlKaFc7Jyeo+7wgPFEyGdLSVpNWxkpgTAOZgiRfLEEWyHunp0SgdKBIyhUmrjTudg09jRTBZ4Fk90hSen9/jCOVlKU1sPNbZpyxjslAYDFQJ6IrSzXjIGE4JGdW6cGhtp9uXoXlRcOlcpmJ7fpqQb9Xmgu1cNCvScQ2+/jsXBEINNI0lTa/XiDvv1g+gZK5oAgIiuS7Mvp8bG6tz4hKDBGOyslz0REhc0I4UPBYBdDUor8Fl0VY0Btfv1/EVn3xsLDWJqXuBRlIIsL/RH5bmbLImAM+wKK3a6gPSMzqX5ai0OE69GJQQAPX8R1O6/qsbwWaQV7GpQp985T4OBag2GgTvqZGevBq0XXh4Qh3dKf0AXl4Brj+FOrzNMH32ROroGl0pqAo+JUqneqD430dMEbZ3KYzB9jgMdRDOjKa6RhQiurYtLpD8gDu9ceHkAtO7s1TvqpGGk2AuSYvrOMuFUh95zRGmCBdWeBQURfaAW5l+FdsYFt8MrybSuGZ94haIxMgYl3gg+Czp7FD/tRhmDhKMj/WSdcyfjSxMAGEPbgflX6QO1CwoiC6o9mmDPEXWqQ1uprpW6xp40bN4nGYKH62WLffTGq2rxMjJHUXA7grQGrwmv1uK6TRSP05mxKSJoBVle6O6VZ2YSBINwn1YunhlxjjtNANCaTFMtXkZvvLpssc/DNUPYvE/SEKl5CqBag2XhGwdkU0i7kr64LDCh74jsiVD1XIzHx9ZIAYAIvCb88cBgpsm8NZFQCRcYgiZgHLt6tMERgAa2jSEYXG95z3llnGgyhvE4Vc+VPZEJfUe+uCzgSmoK6TcOSGuIM3NS19ibJrSF9O93uIaAyYXsE/OYfu0V/fmvjtPmzpRMicAwkDHdFVbJpUKlqK1TmoKdOV7d5PTGe/bGXeS5YNZnzKS1/vxX9WuvfGIem1zIDAG/3+G2hfRQ5Z2pzU0TCAM3bHN7o+RKfeuKAn/9dunPVbPnj4eRQiqmyUMb/R7oCktEZAixBEVjYBmgCADA5PRWnf2bbaQ0jmqn5EhiDONxNXu+9Of667ffuqLAlbo3Shu2ucIYctowNRrS4LWg7ph6ZbfkDC4rF1+Yr9WG39GXbwOV9pbCDDWYqQEyOYEfUa4kQ2BnWGmFjCHQAM3nt5EmTK82cBRCUIq+fJva8LsvzNeXlQvO4JXdsu6Y8g6xjQ6GWfUkAMZh49sOETiO+tqNhd6dr0hH6poFGI+Oh5HC+UxjcUIE00CpVDROgkNbpzI5EoAhxp8mYxiP6poF0pHena987cZCx1FEsPFth/HhJtyH5KI1+Dy4tVZu2u4KjrPK+E1LhXrhWbXyLqJxfATHANP9+KuXSCkSAgxO3RFNBD1hbRqMIW0dd9sEICICtfIu9cKzNy0Vs8q44Lhpu7u1Vvo8wx3hNqyhISDC+g12wiHHUatuyS86tV8ee18tvxmjUcjoOKOMROAx4bVa3PA2IUDAD91hGU3oeAICPny3wX7u7XGmyTlGo2r5zfLY+0Wn9q+6Jd9xVMKh9Rvs5AG6w2g4oEkjPXxSvbDFtQwMBmjVrbn6iV/RoqW6dCokEuPV8QeOqYAnN+NvNuuAD1xXHW9WXoM1tIyq3CMjMQaJhC6dSouW6id+terW3GCALANf2OIePqmGN08YsXIkuQy5boPd0qUdh277nO9PKmPOM0+qO78NehzP/CUChoAM/vU13LiNgPSxJvdUl/vYa3I8yj0GX1trdee3nWee/JPK2G2f8zkOtXTpdRvsdNYERwCazElDPfrh523LQOmo+1YFCxq2qaNH5e2rxrXjn8v09T3qSJPzb2/pUGRU5R7pi3OMRuXtq9TRowUN2+5bFZSOsgx8+Hk71DNk7nmuRu6zSkGWHzdudTZtdz0mVhTDA39dSM+so7Lp6upPYF/fuDLlDBTBhl3sxXdZqA89F7nQNrw4x74+dfUnqGw6PbPugb8urCgGj4mbtrsbtzpZfkznlJW0nCAReCx88Kn4sVZtO3TDEuPrn/W5j/6YvnK7Li3HaP+4MhUcbBd6ojC+PZ1zjPbr0nL6yu3uoz/++md9NywxbIeOteoHn4p7rHRPLkkXqCGgO0L3/EscEPr69fduD1wZ7LLX/0J9+35dUIzx2LgyRYRxjEIAwDnGY7qgWH37fnv9L64Mdn3v9kBfvwaEe/4l3h2hC+ezh1K6YVppyPLjrjr5k+ft3GxUrlr3g+J59j7nqX9Wax7SuQUYG0emMMpjTtIT5xiL6dwCteYh56l/nmfvW/eDYuWq3Gz8yfP2rjqZ5U+3ohoyqg9NOtMn/mA/+UfHa2G2pX72/ZL8+m3y2cfUt+7X+cFxtdPxUtI284PqW/fLZx/Lr9/2s++XZFvKa+GTf3Se+IOdpus8o8wSSQLwWPgPj8XfqpWWgZNy9eNrS3IPbpX/+Zxa85DOC2J//4ibmj5C4gL7+3VeUK15SP7nc7kHtz6+tmRSrrYMfKtW/sNjcY+VWW00ZAyUgDHwmHj3utjeI0oInFOmH19bkndw60Dfn1yOfZGPh51yjn0RPbk82dPzDm59fG3JnDItBO49ou5eF/OYOIqyrkvHrn/Yx64ndenBAENplINxpcFjQiQGd/40umW/5Bw9XD354IQ7r4nJtX8nNcgf/EyXlGFfZOBgv4+CGAPGsC+iS8rkD34mNci1f3fnNbEnH5zg4Ypz3LJf3vnTaCQ2eppw6eEqH6GHqyR16fE/gy946QFVH60HVJ3RpUeoDTTh0kP+PqIP+Rv4c5ceQ3npQaljq0uP8h3rG7/0sOmx1aXHoY+xPgigSSUPok844NgEDMqK2KJqsWAGXzhTFOej18SzU1SYPPgWXAVSI57lOXCShjGwNehsv1UK4g61d9POw3J3g9pRJ092aNBgWugxQevxtcpz9cEBHbgeQjI+2C64NgFAXg5WlPBpE1lVGZsxmZcWMZ8FuVmoCQRH4/y6FwRwFUhFDCHcTzEbmjp0wylVf1K/36KPtaqeXgIAw0LLGNhjO44LJylv8AMGevbCOLDz0FVgO0QKAIAbmJeF2T6YUsxdSZOCrDTIXElnXKghsCmkm0PaEHiiXfXFoKeflEsAgBwsEw0O8GFwPHtfHxbQsy04M8AB0ARSgdbgJg9lGcrlMQAAQyBjIPjAFzMwLPhA2jyMPvzlioHKszN13xyAg2UinGY9qMufoZa0QaKBctGPiD58oIN0BtPHVB+Nqd//QboEdIz1/wHnhN78PKSV7AAAAABJRU5ErkJggg==" alt="">DIAMOND</h1><button class="lgb" id="lgb" onclick="lgm()"></button><span id="st">💾</span><div class="seg" id="seg"></div></header>
+<main id="main"></main>
+<div class="inp" id="inp" style="display:none"><input id="tx" placeholder="Напишите вопрос или услугу…"><button class="btn" onclick="send()">➤</button></div>
+<nav id="nav"></nav>
+</div>
+<script>
+const G=[];
+const $=s=>document.querySelector(s),p2=n=>String(n).padStart(2,'0');
+const ld=(k,f)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}};
+const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dg=s=>String(s).replace(/\D/g,''),money=n=>Math.round(n).toLocaleString('ru-RU')+' ₸';
+/* ===== ЯЗЫКИ: қазақша / русский / English ===== */
+let LANG=ld('dm_lang',null)||(n=>/^kk/i.test(n)?'kk':/^en/i.test(n)?'en':'ru')(navigator.language||'ru');
+const LOC={ru:'ru-RU',kk:'kk-KZ',en:'en-GB'};
+const EX={
+'Удалить фото':['Фотоны жою','Delete photo'],'Удалить отзыв':['Пікірді жою','Delete review'],'Удалить фото?':['Фотоны жою керек пе?','Delete this photo?'],'Удалить отзыв?':['Пікірді жою керек пе?','Delete this review?'],
+'Фото из ваших видео':['Бейнелеріңіздегі фото','Photos from your videos'],
+'Скрыть фото из галереи?':['Фотоны галереядан жасыру керек пе?','Hide this photo from the gallery?'],
+'Удалить отзыв':['Пікірді жою','Delete review'],'Удалить фото':['Фотоны жою','Delete photo'],
+'Удалить отзыв?':['Пікірді жою керек пе?','Delete this review?'],'Удалить фото?':['Фотоны жою керек пе?','Delete this photo?'],
+'Мои отзывы':['Менің пікірлерім','My reviews'],'опубликован':['жарияланған','published'],'на проверке':['тексеруде','under review'],
+'🔔 Новое: заказ':['🔔 Жаңа: тапсырыс','🔔 New: order'],
+'Память устройства заполнена. Подключите облако, чтобы фото не терялись.':['Құрылғы жады толы. Фото жоғалмауы үшін бұлтты қосыңыз.','Device storage is full. Connect the cloud so photos are not lost.'],
+'Алматы':['Алматы','Almaty'],'📍 Алматы':['📍 Алматы','📍 Almaty'],
+'Клиент':['Клиент','Client'],'Мастер':['Шебер','Master'],'Мастер 🔔':['Шебер 🔔','Master 🔔'],
+'Главная':['Басты бет','Home'],'Запись':['Жазылу','Booking'],'Магазин':['Дүкен','Shop'],'Профиль':['Профиль','Profile'],
+'Заказы':['Тапсырыстар','Orders'],'График':['Кесте','Schedule'],'Клиенты':['Клиенттер','Clients'],'Входящие':['Кіріс','Inbox'],
+'Настройки':['Баптаулар','Settings'],'Меню':['Мәзір','Menu'],'Услуги':['Қызметтер','Services'],'Отзывы':['Пікірлер','Reviews'],
+'Войти':['Кіру','Sign in'],'Назад':['Артқа','Back'],'Продолжить':['Жалғастыру','Continue'],'Пароль':['Құпиясөз','Password'],
+'Сохранить':['Сақтау','Save'],'Удалить':['Жою','Delete'],'Отменить':['Бас тарту','Cancel'],'Подтвердить':['Растау','Confirm'],
+'Отправить':['Жіберу','Send'],'Добавить':['Қосу','Add'],'Изменить':['Өзгерту','Edit'],'Скрыть':['Жасыру','Hide'],
+'Опубликовать':['Жариялау','Publish'],'Прочитано':['Оқылды','Mark as read'],'Выйти':['Шығу','Log out'],'Выдан':['Берілді','Handed over'],
+'был':['келді','visited'],'ждёт':['күтуде','pending'],'новая':['жаңа','new'],'отмена':['бас тартылды','cancelled'],
+'Пн':['Дс','Mon'],'Вт':['Сс','Tue'],'Ср':['Ср','Wed'],'Чт':['Бс','Thu'],'Пт':['Жм','Fri'],'Сб':['Сб','Sat'],'Вс':['Жс','Sun'],
+'выходной':['демалыс','day off'],'Неделя':['Апта','Week'],'Облако':['Бұлт','Cloud'],'Бонус':['Бонус','Bonus'],
+'Заказать':['Тапсырыс беру','Order'],'Сообщения':['Хабарламалар','Messages'],'Записи':['Жазылулар','Bookings'],
+'Товары':['Тауарлар','Products'],'Алматы':['Алматы','Almaty'],'Пароль':['Құпиясөз','Password']
+};
+const SUB={
+'Бонусы и профиль':['Бонустар және профиль','Bonuses and profile'],'О приложении':['Қосымша туралы','About the app'],
+'Связаться с мастером':['Шебермен байланысу','Contact the master'],'Галерея работ':['Жұмыстар галереясы','Gallery of works'],
+'Красота с характером':['Мінезі бар сұлулық','Beauty with character'],
+'Парикмахер-универсал: стрижки, сложные окрашивания, макияж и брови. Запись 24/7 через бота.':['Әмбебап шаштараз: шаш қию, күрделі бояу, макияж және қас түзету. Бот арқылы тәулік бойы жазылу.','Versatile hairstylist: haircuts, complex coloring, makeup and brow shaping. Book 24/7 with our bot.'],
+'Записаться онлайн':['Онлайн жазылу','Book online'],'Мои работы':['Менің жұмыстарым','My work'],
+'Вся галерея →':['Бүкіл галерея →','Full gallery →'],'Отзывы клиентов':['Клиент пікірлері','Client reviews'],
+'Отзывов пока нет. Станьте первым!':['Әзірге пікір жоқ. Алғашқы болыңыз!','No reviews yet. Be the first!'],
+'Все отзывы и написать отзыв':['Барлық пікірлер және пікір жазу','All reviews and write a review'],
+'Нажмите на фото, чтобы открыть его на весь экран.':['Фотоны толық экранға ашу үшін басыңыз.','Tap a photo to open it full screen.'],
+'Нажмите на фото, чтобы приблизить':['Үлкейту үшін фотоны басыңыз','Tap the photo to zoom in'],
+'Сложное окрашивание':['Күрделі бояу','Complex coloring'],'Профессиональный макияж':['Кәсіби макияж','Professional makeup'],
+'Коррекция бровей':['Қас түзету','Eyebrow shaping'],'Образ под ключ':['Дайын бейне','Full look'],
+'Стрижка, укладка и макияж за один визит.':['Бір келуде шаш қию, үлгілеу және макияж.','Haircut, styling and makeup in one visit.'],
+'Женская, мужская, детская. Подбор формы под лицо.':['Әйелдер, ерлер, балалар. Бет пішініне сай таңдау.','Women’s, men’s, kids’. Cut chosen to suit your face shape.'],
+'Airtouch, балаяж, блонд, шатуш, тонирование.':['Airtouch, балаяж, блонд, шатуш, тондау.','Airtouch, balayage, blonde, shatush, toning.'],
+'Дневной, вечерний, свадебный.':['Күндізгі, кешкі, үйлену тойы.','Day, evening, bridal.'],
+'Форма, окрашивание, ламинирование.':['Пішін, бояу, ламинирлеу.','Shape, tinting, lamination.'],
+'Локоны, объём, праздничная укладка.':['Бұйра, көлем, мерекелік үлгі.','Curls, volume, festive styling.'],
+'Стрижка':['Шаш қию','Haircut'],'Укладка':['Шаш үлгілеу','Styling'],
+'Шампунь для окрашенных волос':['Боялған шашқа арналған шампунь','Shampoo for colored hair'],
+'Маска-восстановление':['Қалпына келтіретін маска','Repair mask'],'Сыворотка для кончиков':['Шаш ұштарына арналған сарысу','Hair-end serum'],
+'Термозащита для укладки':['Үлгілеуге арналған термоқорғаныс','Heat protection for styling'],
+'Гель для бровей':['Қасқа арналған гель','Brow gel'],'Расчёска для волос':['Шаш тарағы','Hair brush'],
+'В корзину':['Себетке салу','Add to cart'],'Магазин салона':['Салон дүкені','Salon shop'],
+'Самовывоз в салоне. Оплата наличными или переводом на KaspiGold.':['Салоннан алып кету. Алған кезде төлеу.','Pick-up at the salon. Pay on receipt.'],
+'Заказ отправлен мастеру':['Тапсырыс шеберге жіберілді','Order sent to the master'],
+'Свободное время:':['Бос уақыт:','Available time:'],'Выберите дату:':['Күнді таңдаңыз:','Choose a date:'],
+'Проверьте запись:':['Жазылуды тексеріңіз:','Check your booking:'],'✅ Подтвердить':['✅ Растау','✅ Confirm'],
+'↩️ Заново':['↩️ Қайтадан','↩️ Start over'],'➕ Ещё запись':['➕ Тағы жазылу','➕ Another booking'],
+'Это время занято. Выберите другое.':['Бұл уақыт бос емес. Басқасын таңдаңыз.','This time is taken. Choose another.'],
+'Свободных дат нет. Мастер скоро обновит график.':['Бос күн жоқ. Шебер жақында кестені жаңартады.','No free dates. The master will update the schedule soon.'],
+'Мастер получил уведомление. Если время изменится, мастер позвонит вам.':['Шебер хабарлама алды. Уақыт өзгерсе, шебер сізге қоңырау шалады.','The master has been notified. If the time changes, the master will call you.'],
+'Я могу записать вас на услугу, назвать цены, график и бонусы. Выберите кнопку или напишите вопрос.':['Мен сізді қызметке жаза аламын, бағаларды, кестені және бонустарды айтамын. Батырманы таңдаңыз немесе сұрағыңызды жазыңыз.','I can book a service, tell you prices, the schedule and bonuses. Choose a button or type your question.'],
+'Для отмены или переноса напишите мастеру: меню → Связаться с мастером.':['Бас тарту немесе көшіру үшін шеберге жазыңыз: мәзір → Шебермен байланысу.','To cancel or reschedule, message the master: menu → Contact the master.'],
+'Адрес уточните у мастера в разделе «Связаться».':['Мекенжайды шеберден «Байланысу» бөлімінде нақтылаңыз.','Ask the master for the address in the “Contact” section.'],
+'Товары салона со скидками — во вкладке «Магазин».':['Салон тауарлары жеңілдікпен — «Дүкен» қойындысында.','Salon products at a discount are in the “Shop” tab.'],
+'Напишите вопрос или услугу…':['Сұрағыңызды немесе қызметті жазыңыз…','Type a question or service…'],
+'Вход / регистрация':['Кіру / тіркелу','Sign in / register'],'Ваше имя':['Атыңыз','Your name'],
+'Номер нужен мастеру, чтобы уточнять время записи по звонку или в WhatsApp.':['Шебер жазылу уақытын қоңырау немесе WhatsApp арқылы нақтылау үшін нөмір қажет.','The master needs your number to confirm the booking time by call or WhatsApp.'],
+'Подтверждение':['Растау','Verification'],
+'1. Запросите 4-значный код у мастера в WhatsApp.':['1. Шеберден WhatsApp арқылы 4 таңбалы код сұраңыз.','1. Request a 4-digit code from the master on WhatsApp.'],
+'2. Введите код. Он действует 3 минуты.':['2. Кодты енгізіңіз. Ол 3 минут жарамды.','2. Enter the code. It is valid for 3 minutes.'],
+'💬 Запросить код в WhatsApp':['💬 WhatsApp-та код сұрау','💬 Request code on WhatsApp'],
+'Не открылось? ':['Ашылмады ма? ','Didn’t open? '],'Открыть вручную':['Қолмен ашу','Open manually'],
+'Мастер ещё не указал номер WhatsApp. Позвоните мастеру.':['Шебер WhatsApp нөмірін әлі көрсетпеді. Шеберге қоңырау шалыңыз.','The master hasn’t set a WhatsApp number yet. Please call the master.'],
+'Неверный или просроченный код':['Код қате немесе мерзімі өткен','Invalid or expired code'],
+'Добро пожаловать!':['Қош келдіңіз!','Welcome!'],
+'Укажите имя и 10 цифр номера после +7':['Атыңызды және +7-ден кейін 10 саннан тұратын нөмірді көрсетіңіз','Enter your name and the 10 digits after +7'],
+'🔐 Просит код для входа в приложение':['🔐 Қосымшаға кіру үшін код сұрайды','🔐 Requests a login code'],
+'Здравствуйте! Прошу код для входа в DIAMOND. Телефон: +':['Сәлеметсіз бе! DIAMOND қосымшасына кіру үшін код сұраймын. Телефон: +','Hello! Please send me the login code for DIAMOND. Phone: +'],
+'Мои записи':['Менің жазылуларым','My bookings'],'Записей пока нет.':['Жазылу әзірге жоқ.','No bookings yet.'],
+'🎁 Бонусная программа':['🎁 Бонус бағдарламасы','🎁 Bonus program'],'Визитов: ':['Келу саны: ','Visits: '],'визитов: ':['келу: ','visits: '],
+'Опубликованных отзывов пока нет.':['Жарияланған пікір әзірге жоқ.','No published reviews yet.'],
+'Оставить отзыв':['Пікір қалдыру','Leave a review'],'Как всё прошло?':['Қалай өтті?','How did it go?'],
+'📷 Фото причёски':['📷 Шаш үлгісінің фотосы','📷 Hairstyle photo'],
+'Разрешаю опубликовать отзыв и фото в приложении':['Пікір мен фотоның қосымшада жариялануына рұқсат беремін','I allow publishing my review and photo in the app'],
+'Напишите отзыв':['Пікір жазыңыз','Please write a review'],
+'Спасибо! Отзыв отправлен мастеру':['Рахмет! Пікір шеберге жіберілді','Thank you! Your review was sent to the master'],
+'«DIAMOND» — приложение салона мастера Разии. Стрижки, сложные окрашивания, профессиональный макияж и коррекция бровей.':['«DIAMOND» — шебер Разияның салон қосымшасы. Шаш қию, күрделі бояу, кәсіби макияж және қас түзету.','“DIAMOND” is the app of master Razia’s salon. Haircuts, complex coloring, professional makeup and eyebrow shaping.'],
+'✅ Онлайн-запись через бота, даже без интернета':['✅ Бот арқылы онлайн жазылу, интернетсіз де','✅ Online booking via bot, even offline'],
+'✅ Вход по коду из WhatsApp':['✅ WhatsApp коды арқылы кіру','✅ Sign-in with a WhatsApp code'],
+'✅ Бонусы за 5 визитов':['✅ 5 келу үшін бонустар','✅ Bonuses for 5 visits'],
+'✅ Магазин товаров салона со скидками':['✅ Жеңілдікті салон тауарлары дүкені','✅ Salon product shop with discounts'],
+'✅ Отзывы с фото':['✅ Фотомен пікірлер','✅ Reviews with photos'],
+'✅ Облачная синхронизация клиента и мастера':['✅ Клиент пен шебердің бұлттық синхрондауы','✅ Cloud sync between client and master'],
+'Версия 2.0 · TikTok @razzi.hair':['Нұсқа 2.0 · TikTok @razzi.hair','Version 2.0 · TikTok @razzi.hair'],
+'📞 Позвонить':['📞 Қоңырау шалу','📞 Call'],'Мастер ещё не указал номер.':['Шебер нөмірді әлі көрсетпеді.','The master hasn’t set a number yet.'],
+'Написать сообщение':['Хабарлама жазу','Write a message'],'Ваш вопрос мастеру':['Шеберге сұрағыңыз','Your question for the master'],
+'Имя и телефон':['Атыңыз бен телефоныңыз','Name and phone'],'Сообщение отправлено':['Хабарлама жіберілді','Message sent'],
+'Кабинет мастера':['Шебер кабинеті','Master cabinet'],'Вход мастера':['Шебер кіруі','Master login'],
+'Введите пароль.':['Құпиясөзді енгізіңіз.','Enter the password.'],'Неверный пароль':['Құпиясөз қате','Wrong password'],
+'Логин (имя админа или номер WhatsApp)':['Логин (әкімші аты немесе WhatsApp нөмірі)','Login (admin name or WhatsApp number)'],
+'Неверный логин или пароль':['Логин немесе құпиясөз қате','Wrong login or password'],
+'🔔 Новых: ':['🔔 Жаңа: ','🔔 New: '],' · Сегодня: ':[' · Бүгін: ',' · Today: '],'Новых: ':['Жаңа: ','New: '],
+'Заказы товаров':['Тауар тапсырыстары','Product orders'],'✔ Пришёл':['✔ Келді','✔ Came'],
+'Месяц (28 дней)':['Ай (28 күн)','Month (28 days)'],
+'Нажмите день: выходной или рабочий. Рамка: есть записи.':['Күнді басыңыз: демалыс немесе жұмыс күні. Жиек: жазылулар бар.','Tap a day to switch day off / working. Outlined: has bookings.'],
+'Клиенты (':['Клиенттер (','Clients ('],
+'Код входа: нажмите «Код» и отправьте клиенту в WhatsApp. Код действует 3 минуты.':['Кіру коды: «Код» түймесін басып, клиентке WhatsApp арқылы жіберіңіз. Код 3 минут жарамды.','Login code: tap “Code” and send it to the client on WhatsApp. The code is valid for 3 minutes.'],
+'🔑 Код для ':['🔑 Клиент коды · ','🔑 Code for '],'🔑 Код':['🔑 Код','🔑 Code'],'Удалить клиента?':['Клиентті жою керек пе?','Delete this client?'],
+'Сообщений нет.':['Хабарлама жоқ.','No messages.'],'Отзывов нет.':['Пікір жоқ.','No reviews.'],
+'⛔ Публикация не разрешена':['⛔ Жариялауға рұқсат жоқ','⛔ Publishing not allowed'],'✅ Клиент разрешил публикацию':['✅ Клиент жариялауға рұқсат берді','✅ Client allowed publishing'],
+'🔔 Новое: ':['🔔 Жаңа: ','🔔 New: '],'🔔 Новая запись: ':['🔔 Жаңа жазылу: ','🔔 New booking: '],'🔔 Регистрация: ':['🔔 Тіркелу: ','🔔 Registration: '],
+'Генератор 2FA':['2FA генераторы','2FA generator'],'Коды входа для клиентов':['Клиенттерге арналған кіру кодтары','Login codes for clients'],
+'Фото, цены и скидки':['Фото, баға және жеңілдіктер','Photos, prices and discounts'],'Фото для главного экрана':['Басты экранға арналған фото','Photos for the home screen'],
+'Настройки мастера':['Шебер баптаулары','Master settings'],
+'Контакты, бонусы, имя и пароль админа, облако':['Байланыс, бонустар, әкімші аты мен құпиясөзі, бұлт','Contacts, bonuses, admin name and password, cloud'],
+'Выйти из кабинета':['Кабинеттен шығу','Exit the cabinet'],
+'Код клиента действует 3 минуты и меняется сам. Отправьте его клиенту в WhatsApp.':['Клиент коды 3 минут жарамды және өзі ауысады. Оны клиентке WhatsApp арқылы жіберіңіз.','The client code is valid for 3 minutes and changes automatically. Send it to the client on WhatsApp.'],
+'Клиентов пока нет.':['Клиент әзірге жоқ.','No clients yet.'],'Скидка %':['Жеңілдік %','Discount %'],
+'Удалить товар?':['Тауарды жою керек пе?','Delete this product?'],'Добавить товар':['Тауар қосу','Add product'],
+'Название и цена':['Атауы және бағасы','Name and price'],'Скидка на товар, %':['Тауарға жеңілдік, %','Product discount, %'],
+'Цена, ₸':['Бағасы, ₸','Price, ₸'],'Название':['Атауы','Name'],
+'Одна работа — до 6 фото с разных ракурсов. Ваши работы идут первыми на главном экране.':['Бір жұмыс — әртүрлі қырынан түскен 6 фотоға дейін. Сіздің жұмыстарыңыз басты экранда бірінші тұрады.','One work — up to 6 photos from different angles. Your works appear first on the home screen.'],
+'Добавить работу':['Жұмыс қосу','Add a work'],'Удалить работу?':['Жұмысты жою керек пе?','Delete this work?'],
+'Своих работ пока нет. Добавьте первую работу.':['Өз жұмыстарыңыз әзірге жоқ. Қазір бейнелеріңізден алынған фотолар көрсетілген.','No works of your own yet. Photos from your videos are shown for now.'],
+'Загрузка…':['Жүктелуде…','Uploading…'],
+'WhatsApp (цифры с кодом страны, без +)':['WhatsApp (ел кодымен сандар, + белгісіз)','WhatsApp (digits with country code, no +)'],
+'Адрес салона':['Салон мекенжайы','Salon address'],'Бонус: визитов до скидки':['Бонус: жеңілдікке дейінгі келу саны','Bonus: visits until discount'],
+'Размер скидки, %':['Жеңілдік мөлшері, %','Discount size, %'],'Сохранено':['Сақталды','Saved'],
+'Админ мастера':['Шебер әкімшісі','Master admin'],'Имя админа':['Әкімші аты','Admin name'],'Новое имя':['Жаңа аты','New name'],
+'Текущий пароль неверный':['Ағымдағы құпиясөз қате','Current password is wrong'],'Текущий пароль':['Ағымдағы құпиясөз','Current password'],
+'Новый пароль (минимум 6 символов)':['Жаңа құпиясөз (кемінде 6 таңба)','New password (at least 6 characters)'],
+'Сохранить имя и пароль':['Атын және құпиясөзді сақтау','Save name and password'],
+'Имя обязательно. Пароль: минимум 6 символов':['Аты міндетті. Құпиясөз: кемінде 6 таңба','Name is required. Password: at least 6 characters'],
+'Имя и пароль админа сохранены':['Әкімші аты мен құпиясөзі сақталды','Admin name and password saved'],
+'Подключено ☁️':['Қосылған ☁️','Connected ☁️'],'Не подключено 💾 (данные только на этом устройстве)':['Қосылмаған 💾 (деректер тек осы құрылғыда)','Not connected 💾 (data stays on this device only)'],
+'Синхронизировать':['Синхрондау','Sync now'],'Проверить облако':['Бұлтты тексеру','Check cloud'],'Синхронизация…':['Синхрондау…','Syncing…'],
+'Облако не подключено: файл config.js пуст.':['Бұлт қосылмаған: config.js файлы бос.','Cloud is not connected: config.js is empty.'],
+'Нет связи с ':['Байланыс жоқ: ','No connection to '],'⚠️ Облако: ':['⚠️ Бұлт: ','⚠️ Cloud: '],'Чтение: ':['Оқу: ','Read: '],'Запись: ':['Жазу: ','Write: '],
+'Текст скопирован. Вставьте его в чат WhatsApp.':['Мәтін көшірілді. Оны WhatsApp чатына қойыңыз.','Text copied. Paste it into the WhatsApp chat.'],
+' · скидка ':[' · жеңілдік ',' · discount ']
+};
+const RX=[
+[/Восстановить скрытые \((\d+)\)/g,(i,n)=>i?`Restore hidden (${n})`:`Жасырылғандарды қалпына келтіру (${n})`],
+[/Ещё (\d+) до скидки (\d+)%/g,(i,n,p)=>i?`${n} more until ${p}% discount`:`${p}% жеңілдікке дейін тағы ${n}`],
+[/Ваша скидка (\d+)% активна!/g,(i,p)=>i?`Your ${p}% discount is active!`:`Сіздің ${p}% жеңілдігіңіз белсенді!`],
+[/Ваша скидка: (\d+)%/g,(i,p)=>i?`Your discount: ${p}%`:`Сіздің жеңілдігіңіз: ${p}%`],
+[/От (\d+) визитов(?: —)? скидка (\d+)% на услуги и товары\./g,(i,n,p)=>i?`From ${n} visits: ${p}% off services and products.`:`${n} келуден бастап қызметтер мен тауарларға ${p}% жеңілдік.`],
+[/Работа добавлена: (\d+) фото/g,(i,n)=>i?`Work added: ${n} photos`:`Жұмыс қосылды: ${n} фото`],
+[/Загрузка фото…/g,()=>0],
+[/Работа (\d+)/g,(i,n)=>i?`Work ${n}`:`Жұмыс ${n}`],
+[/(\d+) из (\d+)/g,(i,a,b)=>i?`${a} of ${b}`:`${a} / ${b}`],
+[/ в (\d{1,2}:\d{2})/g,(i,t)=>i?` at ${t}`:` ${t}-де`],
+[/(\d+) шт/g,(i,n)=>i?`${n} pcs`:`${n} дана`],
+[/от ([\d\s\u00a0\u202f]+) ₸/g,(i,n)=>i?`from ${n} ₸`:`${n} ₸-ден`],
+[/Готово, (.+?)! /g,(i,n)=>i?`Done, ${n}! `:`Дайын, ${n}! `],
+[/Здравствуйте(, [^!]+)?! Я бот мастера Разии\. На какую услугу записать\?/g,(i,n)=>i?`Hello${n||''}! I’m the master’s bot. Which service would you like to book?`:`Сәлеметсіз бе${n||''}! Мен шебердің ботымын. Қай қызметке жазайын?`],
+[/(^|\n)(Пн|Вт|Ср|Чт|Пт|Сб|Вс): (выходной)?/g,(i,s,d,w)=>s+EX[d][i]+': '+(w?(i?'day off':'демалыс'):'')]
+];
+RX.splice(5,1);
+
+(function(){const E={
+'Разия':['Разия','Raziya'],
+'Парикмахер · стилист · визажист':['Шаштараз · стилист · визажист','Hairdresser · stylist · makeup artist'],
+'Я Разия. Делаю стрижки, сложные окрашивания, макияж и брови.':['Мен Разияммын. Шаш қиямын, күрделі бояу, макияж және қас түзетемін.','I’m Raziya. I do haircuts, complex colouring, makeup and brows.'],
+'Я люблю, когда клиент уходит с улыбкой и чувствует себя красивым.':['Клиент күліп, өзін сұлу сезініп кеткенін жақсы көремін.','I love it when a client leaves smiling and feeling beautiful.'],
+'Приходите. Мы вместе подберём ваш образ.':['Келіңіз. Бірге сіздің бейнеңізді таңдаймыз.','Come in. Together we will find your look.'],
+'Из моих рабочих дней':['Менің жұмыс күндерімнен','From my working days'],
+'Фото с работы скоро появятся.':['Жұмыстан түскен фотолар жақында пайда болады.','Photos from work will appear soon.'],
+'Записаться ко мне':['Маған жазылу','Book with me'],
+'О мастере':['Шебер туралы','About the master'],
+'Моя страница':['Менің бетім','My page'],
+'Текст о себе и фото с подписями':['Өзім туралы мәтін және жазбалы фотолар','About me and photos with captions'],
+'Услуги и цены':['Қызметтер мен бағалар','Services and prices'],
+'Редактор, цены и фото работ':['Өңдеуші, бағалар және жұмыс фотолары','Editor, prices and work photos'],
+'Это ваша личная страница. Клиент видит её в меню «О мастере».':['Бұл сіздің жеке бетіңіз. Клиент оны «Шебер туралы» мәзірінен көреді.','This is your personal page. Clients see it in the “About the master” menu.'],
+'Измените название, цену, время и описание. Добавьте до 5 фото работ. Клиент видит фото в разделе «Услуги».':['Атауын, бағасын, уақытын және сипаттамасын өзгертіңіз. 5 жұмыс фотосына дейін қосыңыз. Клиент фотоларды «Қызметтер» бөлімінде көреді.','Change the name, price, time and description. Add up to 5 work photos. Clients see the photos in the “Services” section.'],
+'Имя':['Аты','Name'],'Подзаголовок':['Тақырыпша','Subtitle'],'Текст о себе':['Өзім туралы мәтін','About me'],
+'Сохранить текст':['Мәтінді сақтау','Save text'],'Добавить фото':['Фото қосу','Add photo'],
+'Подпись к фото':['Фотоға жазба','Photo caption'],'Добавить услугу':['Қызмет қосу','Add service'],
+'Окрашивание':['Бояу','Colouring'],'Макияж':['Макияж','Makeup'],'Брови':['Қастар','Brows'],'Образ':['Бейне','Look'],
+'Время, мин (60)':['Уақыты, мин (60)','Time, min (60)'],'Цена, ₸':['Бағасы, ₸','Price, ₸'],
+'Цена, ₸ (пусто — «Цена по запросу»)':['Бағасы, ₸ (бос — «Баға сұраныс бойынша»)','Price, ₸ (empty — “Price on request”)'],
+'Цена «от»':['Баға «бастап»','Price “from”'],'Время, мин':['Уақыты, мин','Time, min'],'Описание':['Сипаттама','Description'],
+'Название':['Атауы','Name'],'Закрыть':['Жабу','Close'],'Изменить':['Өзгерту','Edit'],'Скрыть':['Жасыру','Hide'],'Показать':['Көрсету','Show'],'Удалить':['Жою','Delete'],
+'Удалить услугу?':['Қызметті жою керек пе?','Delete this service?'],'Цена по запросу':['Баға сұраныс бойынша','Price on request'],
+'Услуга добавлена':['Қызмет қосылды','Service added'],'Сохранено':['Сақталды','Saved'],'Введите название':['Атауын енгізіңіз','Enter a name'],
+'Подпись сохранена':['Жазба сақталды','Caption saved'],'Фото добавлено. Напишите подпись.':['Фото қосылды. Жазба жазыңыз.','Photo added. Write a caption.'],
+'Загрузка…':['Жүктелуде…','Loading…'],'Записаться ко мне':['Маған жазылу','Book with me'],
+'Здравствуйте! Хочу записаться в DIAMOND.':['Сәлеметсіз бе! DIAMOND салонына жазылғым келеді.','Hello! I would like to book at DIAMOND.'],
+'Здравствуйте! Это мастер DIAMOND.':['Сәлеметсіз бе! Бұл DIAMOND салонының шебері.','Hello! This is the master from DIAMOND.'],
+'Ваш код входа в DIAMOND:':['DIAMOND қосымшасына кіру коды:','Your DIAMOND login code:'],
+'Код действует 3 минуты.':['Код 3 минут жарамды.','The code is valid for 3 minutes.']};
+for(const k in E)if(!(k in EX))EX[k]=E[k];
+Object.assign(SUB,{'скрыта от клиентов':['клиенттерден жасырылған','hidden from clients'],'Алматы':['Алматы','Almaty']});
+RX.push([/Фото с подписями \((\d+)\/12\)/g,(i,n)=>i?`Photos with captions (${n}/12)`:`Жазбалы фотолар (${n}/12)`]);
+})();
+
+(function(){const N={
+'Женские стрижки':['Әйелдер шаш қию','Women’s haircuts'],'Мужские стрижки':['Ерлер шаш қию','Men’s haircuts'],'Дополнительно':['Қосымша','Extras'],
+'Женская стрижка: короткие':['Әйелдер шаш қию: қысқа','Women’s haircut: short'],
+'Женская стрижка: средние':['Әйелдер шаш қию: орташа','Women’s haircut: medium'],
+'Женская стрижка: длинные':['Әйелдер шаш қию: ұзын','Women’s haircut: long'],
+'Кончики машинкой подровнять (без мытья головы)':['Шаш ұшын машинкамен тегістеу (басты жумай)','Trim ends with clippers (no hair wash)'],
+'Полировка волос + маска':['Шаш полировкасы + маска','Hair polishing + mask'],
+'Мужская стрижка: любой вид':['Ерлер шаш қию: кез келген түрі','Men’s haircut: any style'],
+'Милирование, омбре, балаяж, айрточ':['Милирование, омбре, балаяж, айртач','Highlights, ombré, balayage, Airtouch'],
+'Окрашивание в один тон':['Бір тонға бояу','Single-tone colouring'],
+'Дневной макияж':['Күндізгі макияж','Day makeup'],'Вечерний макияж':['Кешкі макияж','Evening makeup'],
+'Ресницы (к макияжу)':['Кірпік (макияжға қосымша)','Lashes (added to makeup)'],'Без ресниц':['Кірпіксіз','Without lashes'],
+'Коррекция бровей с покраской':['Қасты бояумен түзету','Brow shaping with tinting'],
+'Коррекция бровей без покраски':['Қасты бояусыз түзету','Brow shaping without tinting'],
+'Усики (нитками)':['Мұрт (жіппен)','Upper lip (threading)'],
+'Челка, корейский стиль':['Кекіл, корей стилі','Fringe, Korean style'],'Челка':['Кекіл','Fringe'],
+'На лысый':['Тақыр қылып қию','Shave to bald'],'Окантовка':['Контур түзету','Edging'],
+'Массаж головы (20 мин)':['Бас массажы (20 мин)','Head massage (20 min)'],
+'Укладка':['Шаш үлгілеу','Styling']};
+for(const k in N)if(!(k in SUB))SUB[k]=N[k];
+const E={'QR-код приложения':['Қосымшаның QR-коды','App QR code'],
+'Наведите камеру телефона на QR-код. Приложение откроется сразу.':['Телефон камерасын QR-кодқа бағыттаңыз. Қосымша бірден ашылады.','Point your phone camera at the QR code. The app opens right away.'],
+'Скачать QR':['QR жүктеу','Download QR']};
+for(const k in E)if(!(k in EX))EX[k]=E[k];
+})();
+
+(function(){const E={
+'Корзина':['Себет','Cart'],'🛒 Корзина':['🛒 Себет','🛒 Cart'],'Корзина пуста':['Себет бос','The cart is empty'],
+'Корзина пуста. Добавьте товары из каталога.':['Себет бос. Каталогтан тауар қосыңыз.','The cart is empty. Add products from the catalogue.'],
+'Каталог':['Каталог','Catalogue'],'💬 Заказать в WhatsApp':['💬 WhatsApp арқылы тапсырыс беру','💬 Order via WhatsApp'],
+'Заказать в приложении':['Қосымшада тапсырыс беру','Order in the app'],'Очистить':['Тазалау','Clear'],
+'Итого:':['Барлығы:','Total:'],'Имя:':['Аты:','Name:'],'Телефон:':['Телефон:','Phone:'],
+'Здравствуйте! Хочу заказать в DIAMOND:':['Сәлеметсіз бе! DIAMOND салонынан тапсырыс бергім келеді:','Hello! I would like to order from DIAMOND:'],
+'Мои фото причёсок':['Менің шаш үлгісі фотоларым','My hairstyle photos'],
+'Фото пока нет. Добавьте фото в отзыве.':['Фото әлі жоқ. Пікірге фото қосыңыз.','No photos yet. Add a photo in a review.'],
+'Убрать фото':['Фотоны алып тастау','Remove photo'],'Фото удалено':['Фото жойылды','Photo deleted'],
+'Удалить фото':['Фотоны жою','Delete photo'],'Фото из отзывов':['Пікірлердегі фотолар','Photos from reviews'],
+'Номер WhatsApp мастера не задан':['Шебердің WhatsApp нөмірі көрсетілмеген','Master’s WhatsApp number is not set'],
+'Описание товара':['Тауар сипаттамасы','Product description']};
+for(const k in E)if(!(k in EX))EX[k]=E[k];
+})();
+
+(function(){const E={
+'Заказ':['Тапсырыс','Order'],
+'💬 Онлайн-чат с мастером':['💬 Шебермен онлайн-чат','💬 Online chat with the master'],
+'Спрашивайте об услугах, товарах и заказах. Ответ придёт сюда.':['Қызметтер, тауарлар және тапсырыстар туралы сұраңыз. Жауап осында келеді.','Ask about services, products and orders. The reply will appear here.'],
+'Напишите мастеру. Ответ придёт сюда.':['Шеберге жазыңыз. Жауап осында келеді.','Write to the master. The reply will appear here.'],
+'Сообщение мастеру':['Шеберге хабарлама','Message to the master'],'Ответ клиенту':['Клиентке жауап','Reply to the client'],
+'🛒 Прикрепить заказ':['🛒 Тапсырысты тіркеу','🛒 Attach an order'],'Магазин':['Дүкен','Shop'],
+'Корзина пуста. Добавьте товары в магазине.':['Себет бос. Дүкеннен тауар қосыңыз.','The cart is empty. Add products in the shop.'],
+'Войдите, чтобы писать мастеру и видеть свои заказы в одном чате.':['Шеберге жазу және тапсырыстарыңызды бір чатта көру үшін кіріңіз.','Sign in to write to the master and see your orders in one chat.'],
+'Чаты':['Чаттар','Chats'],'Сообщения без входа':['Кірмеген клиенттердің хабарламалары','Messages without sign-in'],
+'Чатов пока нет.':['Чаттар әзірге жоқ.','No chats yet.'],'‹ Назад':['‹ Артқа','‹ Back'],
+'Удалить переписку':['Жазбаны жою','Delete conversation'],'Удалить переписку?':['Жазбаны жою керек пе?','Delete the conversation?'],
+'Заказ в чате с мастером':['Тапсырыс шебермен чатта','Order is in the chat with the master'],
+'Отменить заказ':['Тапсырысты болдырмау','Cancel order'],'Отменить заказ?':['Тапсырысты болдырмау керек пе?','Cancel the order?'],
+'Новый':['Жаңа','New'],'Принят':['Қабылданды','Accepted'],'Готов к выдаче':['Беруге дайын','Ready for pick-up'],
+'Выдан':['Берілді','Handed over'],'Отменён':['Болдырылмады','Cancelled'],'Принять':['Қабылдау','Accept'],
+'💬 Чат':['💬 Чат','💬 Chat']};
+for(const k in E)if(!(k in EX))EX[k]=E[k];
+})();
+Object.assign(SUB,{"Мужские стрижки": ["Ерлер шаш қиюы", "Men’s haircuts"], "Борода и усы": ["Сақал және мұрт", "Beard and moustache"], "Уши и нос": ["Құлақ және мұрын", "Ears and nose"], "Брови": ["Қас", "Brows"], "Дополнительно": ["Қосымша", "Extras"], "Мужская стрижка": ["Ерлер шаш қиюы", "Men’s haircut"], "Стрижка машинкой (одна насадка)": ["Машинкамен қию (бір саптама)", "Clipper cut (one guard)"], "Фейд: стрижка с плавным переходом": ["Фейд: біртіндеп өтетін қию", "Fade: smooth-transition cut"], "Стрижка и укладка": ["Шаш қию және үлгілеу", "Haircut and styling"], "Детская стрижка (до 12 лет)": ["Балалар шаш қиюы (12 жасқа дейін)", "Kids’ haircut (up to 12)"], "Бритьё головы": ["Бас қыру", "Head shave"], "Моделирование бороды": ["Сақалды үлгілеу", "Beard shaping"], "Стрижка усов": ["Мұрт қию", "Moustache trim"], "Стрижка и борода (комплекс)": ["Шаш қию және сақал (кешен)", "Haircut and beard (combo)"], "Королевское бритьё опасной бритвой": ["Түзу ұстарамен корольдік қырыну", "Royal shave with a straight razor"], "Горячее полотенце и уход": ["Ыстық сүлгі және күтім", "Hot towel and care"], "Уход за бородой и усами": ["Сақал мен мұртқа күтім", "Beard and moustache care"], "Масло, бальзам и укладка": ["Май, бальзам және үлгілеу", "Oil, balm and styling"], "Коррекция бровей с окрашиванием": ["Қасты түзету және бояу", "Brow shaping with tinting"], "Коррекция бровей": ["Қас түзету", "Eyebrow shaping"], "Удаление волос в ушах": ["Құлақтағы түктерді алу", "Ear hair removal"], "Удаление волос в носу": ["Мұрындағы түктерді алу", "Nose hair removal"], "Мытьё головы": ["Бас жуу", "Hair wash"], "Окантовка": ["Контур түзету", "Edging"], "Массаж головы (20 мин)": ["Бас массажы (20 мин)", "Head massage (20 min)"], "Тонирование седины": ["Ағарған шашты бояу", "Grey coverage"], "Волосы или борода": ["Шаш немесе сақал", "Hair or beard"], "Матовая паста для укладки": ["Үлгілеуге арналған күңгірт паста", "Matte styling paste"], "Масло для бороды": ["Сақал майы", "Beard oil"], "Воск для усов": ["Мұртқа арналған балауыз", "Moustache wax"], "Шампунь для волос и бороды": ["Шаш пен сақалға арналған шампунь", "Hair and beard shampoo"], "Бальзам для бороды": ["Сақал бальзамы", "Beard balm"], "Расчёска для бороды": ["Сақал тарағы", "Beard comb"], "Гуля": ["Гуля", "Gulya"], "Звонки": ["Қоңыраулар", "Calls"]});
+Object.assign(EX,{"Салон «DIAMOND»": ["Салон «DIAMOND»", "Salon “DIAMOND”"], "Профессиональные мужские стрижки. Борода, усы, брови и уход. Запись 24/7 через бота.": ["Кәсіби ерлер шаш қиюы. Сақал, мұрт, қас және күтім. Бот арқылы тәулік бойы жазылу.", "Professional men’s haircuts. Beard, moustache, brows and care. Book 24/7 with our bot."], "Фото работ скоро появятся.": ["Жұмыс фотолары жақында пайда болады.", "Work photos will appear soon."], "«DIAMOND» — приложение мужской парикмахерской. Владелица и мастер — Гуля. Мужские стрижки, борода и усы, брови, уход.": ["«DIAMOND» — ерлер шаштаразының қосымшасы. Иесі әрі шебері — Гуля. Ерлер шаш қиюы, сақал мен мұрт, қас, күтім.", "“DIAMOND” is the app of a men’s barbershop. Owner and master: Gulya. Men’s haircuts, beard and moustache, brows and care."], "Поделиться приложением": ["Қосымшамен бөлісу", "Share the app"], "Отправьте ссылку друзьям. Приложение откроется сразу.": ["Сілтемені достарыңызға жіберіңіз. Қосымша бірден ашылады.", "Send the link to friends. The app opens right away."], "Поделиться": ["Бөлісу", "Share"], "Ссылка скопирована": ["Сілтеме көшірілді", "Link copied"], "Версия 1.0": ["Нұсқа 1.0", "Version 1.0"], "Оплата наличными или переводом на KaspiGold.": ["Төлем қолма-қол ақшамен немесе KaspiGold аударымымен.", "Pay in cash or by KaspiGold transfer."], "Самовывоз в салоне. Оплата наличными или переводом на KaspiGold.": ["Салонда өзіңіз алып кетесіз. Төлем қолма-қол ақшамен немесе KaspiGold аударымымен.", "Pick-up at the salon. Pay in cash or by KaspiGold transfer."], "Контакты": ["Байланыс", "Contacts"], "Номер для звонков": ["Қоңырау шалуға арналған нөмір", "Phone number for calls"], "KaspiGold (номер для переводов)": ["KaspiGold (аударымға арналған нөмір)", "KaspiGold (number for transfers)"], "Владелица салона · мастер мужских стрижек": ["Салон иесі · ерлер шаш қию шебері", "Salon owner · men’s haircut master"], "Я Гуля, владелица салона «DIAMOND». Делаю мужские стрижки, ухаживаю за бородой и усами, делаю брови.": ["Мен Гуляммын, «DIAMOND» салонының иесімін. Ерлер шашын қиямын, сақал мен мұртқа күтім жасаймын, қасты түзетемін.", "I’m Gulya, the owner of the “DIAMOND” salon. I do men’s haircuts, look after beards and moustaches, and shape brows."], "Я люблю, когда клиент выходит из кресла уверенным в себе.": ["Клиент креслодан өзіне сенімді болып тұрғанын жақсы көремін.", "I love it when a client leaves the chair feeling confident."], "Приходите. Мы вместе подберём форму, которая вам идёт.": ["Келіңіз. Бірге өзіңізге жарасатын пішінді таңдаймыз.", "Come in. Together we will find the shape that suits you."], "Выберите услугу:": ["Қызметті таңдаңыз:", "Choose a service:"], "Своих работ пока нет. Добавьте первую работу.": ["Әзірге өз жұмыстарыңыз жоқ. Алғашқы жұмысты қосыңыз.", "No works of your own yet. Add the first one."]});
+RX.push([/Оплата наличными или переводом на KaspiGold: (\+[\d ]+)/g,(i,n)=>i?`Pay in cash or by transfer to KaspiGold: ${n}`:`Қолма-қол ақшамен немесе KaspiGold аударымымен төлеуге болады: ${n}`]);
+for(const r of RX)if(String(r[0]).indexOf('Я бот мастера Разии')>-1)r[0]=/Здравствуйте(, [^!]+)?! Я бот салона «DIAMOND»\. На какую услугу записать\?/g;
+for(const r of RX)if(String(r[0]).indexOf('Я бот салона')>-1)r[1]=(i,n)=>i?`Hello${n||''}! I’m the DIAMOND bot. Which service would you like to book?`:`Сәлеметсіз бе${n||''}! Мен DIAMOND салонының ботымын. Қай қызметке жазайын?`;
+const SRE=new RegExp(Object.keys(SUB).sort((a,b)=>b.length-a.length).map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|'),'g');
+function tr(s){if(LANG==='ru'||typeof s!=='string'||!/[А-Яа-яЁё]/.test(s))return s;const i=LANG==='kk'?0:1,t=s.trim();
+ if(EX[t])return s.replace(t,EX[t][i]);
+ let o=s;for(const[re,f]of RX)o=o.replace(re,(...a)=>{const g=a.slice(1,a.findIndex(x=>typeof x==='number'));return f(i,...g)});
+ return o.replace(SRE,m=>SUB[m][i])}
+const _al=window.alert.bind(window),_cf=window.confirm.bind(window),_pr=window.prompt.bind(window);
+window.alert=m=>_al(tr(m));window.confirm=m=>_cf(tr(m));window.prompt=(m,d)=>_pr(tr(m),d);
+const trDone=new WeakMap();
+function trNode(n){const v=n.nodeValue;if(n.parentNode&&n.parentNode.closest&&n.parentNode.closest('.ut'))return;if(trDone.get(n)===v||!/[А-Яа-яЁё]/.test(v))return;const r=tr(v);trDone.set(n,r);if(r!==v)n.nodeValue=r}
+function trAttr(e){if(e.hasAttribute&&e.hasAttribute('placeholder')){if(!e.dataset.ph)e.dataset.ph=e.getAttribute('placeholder');e.setAttribute('placeholder',tr(e.dataset.ph))}}
+function trTree(n){if(n.nodeType===3)return trNode(n);if(n.nodeType!==1||/^(SCRIPT|STYLE|TEXTAREA)$/.test(n.tagName))return;trAttr(n);
+ const w=document.createTreeWalker(n,NodeFilter.SHOW_ELEMENT|NodeFilter.SHOW_TEXT);let x;while(x=w.nextNode()){x.nodeType===3?trNode(x):trAttr(x)}}
+new MutationObserver(ms=>{if(LANG==='ru')return;for(const m of ms){if(m.type==='characterData')trNode(m.target);else m.addedNodes.forEach(trTree)}}).observe(document.body,{childList:true,subtree:true,characterData:true});
+const LN={kk:'Қазақша',ru:'Русский',en:'English'};
+const lgChips=()=>`<div class="lgs">${Object.keys(LN).map(k=>`<button class="${LANG==k?'on':''}" onclick="setLang('${k}')">${LN[k]}</button>`).join('')}</div>`;
+function applyLang(){document.documentElement.lang=LANG;const b=$('#lgb');if(b)b.innerHTML=ico('globe',16)+'<span>'+({kk:'KZ',ru:'RU',en:'EN'})[LANG]+'</span>';const t=$('#tx');if(t){if(!t.dataset.ph)t.dataset.ph=t.getAttribute('placeholder');t.setAttribute('placeholder',tr(t.dataset.ph))}}
+function lgm(){const p=$('#lgp');if(p.style.display==='block'){p.style.display='none';return}p.innerHTML=lgChips();p.style.display='block'}
+function setLang(l){LANG=l;sv('dm_lang',l);$('#lgp').style.display='none';L=[];CH=[];lbc();dr(0);applyLang();nav();R();if(tab=='bot')botStart()}
+/* ===== ОБЛАКО: впишите данные Supabase (бесплатный тариф), см. SETUP.md ===== */
+const CLOUD=Object.assign({url:'',key:''},window.CLOUD_CFG||{});
+CLOUD.url=String(CLOUD.url||'').trim().replace(/\/rest\/v1.*$/i,'').replace(/\/+$/,'');CLOUD.key=String(CLOUD.key||'').trim();
+/* ===== ДАННЫЕ: офлайн-хранилище + очередь синхронизации ===== */
+let DB=ld('dm_db',{}),Q=ld('dm_q',[]),last=ld('dm_last',0),busy=0,mAuth=0,me=ld('dm_me',null);
+const col=n=>(DB[n]||[]).filter(x=>!x.del),getI=(n,id)=>(DB[n]||[]).find(x=>x.id==id&&!x.del);
+function saveDB(){try{localStorage.setItem('dm_db',JSON.stringify(DB))}catch(e){try{const c={};for(const k in DB)c[k]=DB[k].map(it=>(it.im&&it.im.length)?{...it,im:Array.isArray(it.im)?[]:'',u:0}:it);localStorage.setItem('dm_db',JSON.stringify(c));if(!saveDB.w){saveDB.w=1;setTimeout(()=>toast('Память устройства заполнена. Подключите облако, чтобы фото не терялись.'),300)}}catch(x){}}}
+function put(n,it){it.u=Date.now();DB[n]=DB[n]||[];const i=DB[n].findIndex(x=>x.id==it.id);if(i<0)DB[n].push(it);else DB[n][i]=it;saveDB();const k=n+'/'+it.id;if(!Q.includes(k)){Q.push(k);sv('dm_q',Q)}sync();if(n=='V')bS()}
+const rm=(n,id)=>{const it=(DB[n]||[]).find(x=>x.id==id);if(it){it.del=1;put(n,it)}};
+const stat=t=>{$('#st').textContent=t};
+let lastErr='';
+const hdr=()=>{const H={apikey:CLOUD.key,'Content-Type':'application/json'};if(/^eyJ/.test(CLOUD.key))H.Authorization='Bearer '+CLOUD.key;return H};
+const fail=async(r,w)=>{lastErr=w+' '+r.status+' '+(await r.text()).slice(0,120);throw new Error(lastErr)};
+async function sync(){if(!CLOUD.url){stat('💾');return}if(busy){sync.p=1;return}if(!navigator.onLine){stat('📴');return}busy=1;
+ try{const H=hdr(),B0=CLOUD.url+'/rest/v1/dia';
+  if(Q.length){const sent=Q.slice(),rows=sent.map(k=>{const[n,id]=k.split('/');const it=(DB[n]||[]).find(x=>x.id==id);return it&&it.u&&{id:k,coll:n,data:it,u:it.u}}).filter(Boolean);
+   const r=await fetch(B0+'?on_conflict=id',{method:'POST',headers:{...H,Prefer:'resolution=merge-duplicates'},body:JSON.stringify(rows)});if(!r.ok)await fail(r,'write');Q=Q.filter(k=>!sent.includes(k));sv('dm_q',Q)}
+  let r=await fetch(B0+'?select=id,u&limit=10000',{headers:H});if(!r.ok)await fail(r,'read');
+  const need=(await r.json()).filter(w=>{const[n,id]=w.id.split('/');const it=(DB[n]||[]).find(x=>x.id==id);return !it||it.u<w.u});let ch=0;
+  for(let i=0;i<need.length;i+=20){r=await fetch(B0+'?select=*&id=in.('+encodeURIComponent(need.slice(i,i+20).map(w=>'"'+w.id+'"').join(','))+')',{headers:H});if(!r.ok)await fail(r,'read');
+   (await r.json()).forEach(w=>{const n=w.coll,d=w.data;DB[n]=DB[n]||[];const j=DB[n].findIndex(x=>x.id==d.id);
+    if(j<0||DB[n][j].u<d.u){if(j<0)DB[n].push(d);else DB[n][j]=d;ch=1;if(j<0&&d.nw&&mAuth)toast('🔔 Новое: '+(d.text||d.svc||'заказ'))}})}
+  if(ch){saveDB();if(!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){nav();R()}else if($('#chl')){nav();chatRefresh()}}
+  lastErr='';stat('☁️');if(Q.length)setTimeout(sync,300)}catch(e){stat(navigator.onLine?'⚠️':'📴');if(mAuth&&lastErr&&sync.e!==lastErr){sync.e=lastErr;toast('⚠️ Облако: '+lastErr)}}busy=0;if(sync.p){sync.p=0;setTimeout(sync,100)}}
+let ws,wst;
+function rt(){if(!CLOUD.url||(ws&&ws.readyState<2))return;try{ws=new WebSocket(CLOUD.url.replace(/^http/,'ws')+'/realtime/v1/websocket?apikey='+encodeURIComponent(CLOUD.key)+'&vsn=1.0.0');
+ ws.onopen=()=>{ws.send(JSON.stringify({topic:'realtime:dia',event:'phx_join',payload:{config:{postgres_changes:[{event:'*',schema:'public',table:'dia'}]}},ref:'1'}));clearInterval(wst);wst=setInterval(()=>{if(ws.readyState==1)ws.send(JSON.stringify({topic:'phoenix',event:'heartbeat',payload:{},ref:'h'}))},25000)};
+ ws.onmessage=e=>{try{if(JSON.parse(e.data).event==='postgres_changes')sync()}catch(x){}};
+ ws.onclose=()=>{clearInterval(wst);setTimeout(rt,3000)};ws.onerror=()=>{try{ws.close()}catch(x){}}}catch(e){}}
+async function chkCloud(){if(!CLOUD.url)return alert('Облако не подключено: файл config.js пуст.');const H=hdr(),B0=CLOUD.url+'/rest/v1/dia';let m='';
+ try{let r=await fetch(B0+'?select=id&limit=1',{headers:H});m+='Чтение: '+(r.ok?'OK':r.status+' '+(await r.text()).slice(0,100));
+  r=await fetch(B0+'?on_conflict=id',{method:'POST',headers:{...H,Prefer:'resolution=merge-duplicates'},body:JSON.stringify([{id:'ping/1',coll:'ping',data:{id:'1',u:Date.now(),del:1},u:Date.now()}])});m+='\nЗапись: '+(r.ok?'OK':r.status+' '+(await r.text()).slice(0,100))}catch(e){m='Нет связи с '+CLOUD.url}
+ alert(m)}
+/* ===== НАСТРОЙКИ, ГРАФИК, ПОЛЬЗОВАТЕЛИ ===== */
+const DN=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+const CF=()=>getI('C','main')||{id:'main',wa:'77059876985',tel:'77023211681',kp:'77479191822',addr:'Алматы',after:5,pct:10,pin:''};
+const setCF=o=>put('C',{...CF(),...o});
+const SC=()=>getI('S','main')||{id:'main',W:DN.map((_,i)=>({on:i<6?1:0,f:'10:00',t:'19:00'})),X:{}};
+const curU=()=>me&&me.exp>Date.now()?(getI('U',me.uid)||me.u||null):null;
+const vis=uid=>col('B').filter(b=>b.uid==uid&&b.st=='done').length;
+const loy=uid=>vis(uid)>=CF().after?+CF().pct:0;
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode('dm'+s)))].map(b=>p2(b.toString(16))).join('');
+async function totp(sec,off=0){const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(sec),{name:'HMAC',hash:'SHA-1'},false,['sign']);
+ const b=new ArrayBuffer(8);new DataView(b).setUint32(4,Math.floor(Date.now()/180000)+off);const h=new Uint8Array(await crypto.subtle.sign('HMAC',k,b)),o=h[19]&15;
+ return String((((h[o]&127)<<24)|(h[o+1]<<16)|(h[o+2]<<8)|h[o+3])%10000).padStart(4,'0')}
+const rnd=()=>[...crypto.getRandomValues(new Uint8Array(16))].map(b=>p2(b.toString(16))).join('');
+const IP={"full":"<path d=\"M8 3H5a2 2 0 0 0-2 2v3\"/><path d=\"M21 8V5a2 2 0 0 0-2-2h-3\"/><path d=\"M3 16v3a2 2 0 0 0 2 2h3\"/><path d=\"M16 21h3a2 2 0 0 0 2-2v-3\"/>","globe":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\"/><path d=\"M2 12h20\"/>","lock":"<rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/>","key":"<circle cx=\"7.5\" cy=\"15.5\" r=\"5.5\"/><path d=\"m21 2-9.6 9.6\"/><path d=\"m15.5 7.5 3 3L22 7l-3-3\"/>","chev":"<path d=\"m9 18 6-6-6-6\"/>","back":"<path d=\"m15 18-6-6 6-6\"/>","home": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/>", "cal": "<path d=\"M8 2v4\"/><path d=\"M16 2v4\"/><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/><path d=\"M3 10h18\"/><path d=\"m9 16 2 2 4-4\"/>", "cal2": "<path d=\"M8 2v4\"/><path d=\"M16 2v4\"/><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/><path d=\"M3 10h18\"/><path d=\"M8 14h.01\"/><path d=\"M12 14h.01\"/><path d=\"M16 14h.01\"/><path d=\"M8 18h.01\"/><path d=\"M12 18h.01\"/>", "bag": "<path d=\"M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z\"/><path d=\"M3 6h18\"/><path d=\"M16 10a4 4 0 0 1-8 0\"/>", "user": "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>", "users": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/>", "list": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"/><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/><path d=\"M12 11h4\"/><path d=\"M12 16h4\"/><path d=\"M8 11h.01\"/><path d=\"M8 16h.01\"/>", "mail": "<rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/>", "sl": "<line x1=\"21\" x2=\"14\" y1=\"4\" y2=\"4\"/><line x1=\"10\" x2=\"3\" y1=\"4\" y2=\"4\"/><line x1=\"21\" x2=\"12\" y1=\"12\" y2=\"12\"/><line x1=\"8\" x2=\"3\" y1=\"12\" y2=\"12\"/><line x1=\"21\" x2=\"16\" y1=\"20\" y2=\"20\"/><line x1=\"12\" x2=\"3\" y1=\"20\" y2=\"20\"/><line x1=\"14\" x2=\"14\" y1=\"2\" y2=\"6\"/><line x1=\"8\" x2=\"8\" y1=\"10\" y2=\"14\"/><line x1=\"16\" x2=\"16\" y1=\"18\" y2=\"22\"/>", "scissors": "<circle cx=\"6\" cy=\"6\" r=\"3\"/><path d=\"M8.12 8.12 12 12\"/><path d=\"M20 4 8.12 15.88\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M14.8 14.8 20 20\"/>", "palette": "<circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"/><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z\"/>", "brush": "<path d=\"m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08\"/><path d=\"M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z\"/>", "brow": "<path d=\"M3 8.5c3.5-3.4 14.5-3.4 18 0\"/><path d=\"M2.062 15.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.876 0\"/><circle cx=\"12\" cy=\"15\" r=\"2.5\"/>", "wind": "<path d=\"M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2\"/><path d=\"M9.6 4.6A2 2 0 1 1 11 8H2\"/><path d=\"M12.6 19.4A2 2 0 1 0 14 16H2\"/>", "crown": "<path d=\"M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z\"/><path d=\"M5 21h14\"/>", "image": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/>", "star": "<path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"/>", "gift": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"/><path d=\"M12 8v13\"/><path d=\"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"/><path d=\"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5\"/>", "info": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4\"/><path d=\"M12 8h.01\"/>", "phone": "<path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"/>", "logout": "<path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/><path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/>", "camera": "<path d=\"M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z\"/><circle cx=\"12\" cy=\"13\" r=\"3\"/>", "x": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>", "menu": "<line x1=\"4\" x2=\"20\" y1=\"12\" y2=\"12\"/><line x1=\"4\" x2=\"20\" y1=\"6\" y2=\"6\"/><line x1=\"4\" x2=\"20\" y1=\"18\" y2=\"18\"/>"};
+const ico=(n,s=24)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${IP[n]}</svg>`;
+Object.assign(IP,{"gem": "<path d=\"M6 3h12l4 6-10 13L2 9Z\"/><path d=\"M11 3 8 9l4 13 4-13-3-6\"/><path d=\"M2 9h20\"/>", "razor": "<path d=\"M3 16l11-9 5 5-9 9z\"/><path d=\"M14 7l3-3 4 4-3 3\"/><path d=\"M7 15l2 2\"/>", "ear": "<path d=\"M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0\"/><path d=\"M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4\"/>", "mustache": "<path d=\"M2 13c3-5 6-5 10-1 4-4 7-4 10 1-2 4-6 4-10 0-4 4-8 4-10 0z\"/>"});
+const SI={cut:'scissors',col:'palette',mu:'brush',br:'brow',st:'wind',lk:'crown'};
+const S0=[
+{id:'m1',g:'Мужские стрижки',n:'Мужская стрижка',e:'💈',ic:'scissors',m:40,p:'4 000 ₸',d:'',k:'мужск|стриж'},
+{id:'m2',g:'Мужские стрижки',n:'Стрижка машинкой (одна насадка)',e:'💈',ic:'scissors',m:20,p:'2 500 ₸',d:'',k:'машинк|насадк'},
+{id:'m3',g:'Мужские стрижки',n:'Фейд: стрижка с плавным переходом',e:'💈',ic:'scissors',m:50,p:'5 000 ₸',d:'',k:'фейд|fade|переход'},
+{id:'m4',g:'Мужские стрижки',n:'Стрижка и укладка',e:'💈',ic:'scissors',m:50,p:'5 500 ₸',d:'',k:'укладк'},
+{id:'m5',g:'Мужские стрижки',n:'Детская стрижка (до 12 лет)',e:'💈',ic:'scissors',m:30,p:'3 000 ₸',d:'',k:'детск|ребен|ребён|мальчик'},
+{id:'m6',g:'Мужские стрижки',n:'Бритьё головы',e:'💈',ic:'scissors',m:30,p:'3 500 ₸',d:'',k:'бритьё головы|лысый'},
+{id:'b1',g:'Борода и усы',n:'Моделирование бороды',e:'🧔',ic:'razor',m:30,p:'3 000 ₸',d:'',k:'бород'},
+{id:'b2',g:'Борода и усы',n:'Стрижка усов',e:'🧔',ic:'razor',m:15,p:'1 500 ₸',d:'',k:'усов|усы'},
+{id:'b3',g:'Борода и усы',n:'Стрижка и борода (комплекс)',e:'🧔',ic:'razor',m:60,p:'6 500 ₸',d:'',k:'комплекс|борода'},
+{id:'b4',g:'Борода и усы',n:'Королевское бритьё опасной бритвой',e:'🧔',ic:'razor',m:40,p:'4 500 ₸',d:'Горячее полотенце и уход',k:'бритв|бритьё'},
+{id:'b5',g:'Борода и усы',n:'Уход за бородой и усами',e:'🧔',ic:'razor',m:30,p:'3 500 ₸',d:'Масло, бальзам и укладка',k:'уход'},
+{id:'r1',g:'Брови',n:'Коррекция бровей',e:'✨',ic:'brow',m:20,p:'2 000 ₸',d:'',k:'бров'},
+{id:'r2',g:'Брови',n:'Коррекция бровей с окрашиванием',e:'✨',ic:'brow',m:30,p:'3 000 ₸',d:'',k:'бров|окраш'},
+{id:'e1',g:'Уши и нос',n:'Удаление волос в ушах',e:'👂',ic:'ear',m:15,p:'1 500 ₸',d:'',k:'уш'},
+{id:'e2',g:'Уши и нос',n:'Удаление волос в носу',e:'👂',ic:'ear',m:15,p:'1 500 ₸',d:'',k:'нос'},
+{id:'x1',g:'Дополнительно',n:'Мытьё головы',e:'➕',ic:'star',m:15,p:'1 000 ₸',d:'',k:'мыть'},
+{id:'x2',g:'Дополнительно',n:'Окантовка',e:'➕',ic:'star',m:15,p:'1 000 ₸',d:'',k:'окантовк'},
+{id:'x3',g:'Дополнительно',n:'Массаж головы (20 мин)',e:'➕',ic:'star',m:20,p:'2 000 ₸',d:'',k:'массаж'},
+{id:'x4',g:'Дополнительно',n:'Тонирование седины',e:'➕',ic:'gem',m:40,p:'от 4 000 ₸',d:'Волосы или борода',k:'седин|камуфляж'}];
+const S=[],SA=[],SCAT=[['Мужские стрижки','💈','scissors'],['Борода и усы','🧔','razor'],['Брови','✨','brow'],['Уши и нос','👂','ear'],['Дополнительно','➕','star']];
+const grp=a=>{const gs=SCAT.map(c=>c[0]).concat(a.map(x=>x.g)).filter((g,i,r)=>r.indexOf(g)==i);return gs.map(g=>[g,a.filter(x=>x.g==g)]).filter(t=>t[1].length)};
+const fP=(p,f)=>p===''||p==null?'Цена по запросу':(f==2?'+':f?'от ':'')+Number(p).toLocaleString('ru-RU')+' ₸';
+function bS(){S.length=0;SA.length=0;const V=DB.V||[],all=[];
+ S0.forEach(d=>{const x=V.find(v=>v.id==d.id);if(!x)all.push({id:d.id,n:d.n,e:d.e,ic:d.ic,g:d.g,m:d.m,d:d.d,im:[],vis:1,pn:+String(d.p).replace(/\D/g,'')||'',f:/^от/.test(d.p)?1:/^\+/.test(d.p)?2:0});else if(!x.del)all.push(x)});
+ V.filter(x=>!x.del&&!S0.some(d=>d.id==x.id)).sort((a,b)=>(a.c||a.u)-(b.c||b.u)).forEach(x=>all.push(x));
+ all.forEach(x=>{const o={...x,g:x.g||((SCAT.find(c=>c[1]==x.e)||[])[0])||'Дополнительно',e:x.e||'✂️',im:x.im||[],vis:!(x.vis===0||x.vis===false),p:fP(x.pn,x.f)};SA.push(o);if(o.vis)S.push(o)})}
+bS();
+const P0=[['p1','Матовая паста для укладки','🧴',5500],['p2','Масло для бороды','🫧',4500],['p3','Воск для усов','🔥',3500],['p4','Шампунь для волос и бороды','💧',5000],['p5','Бальзам для бороды','🧴',4000],['p6','Расчёска для бороды','💇',3000]];
+P0.forEach(([id,n,e,p])=>{if(!getI('P',id)&&!(DB.P||[]).some(x=>x.id==id)){DB.P=DB.P||[];DB.P.push({id,n,e,p,d:0,u:0})}});
+/* ===== ВРЕМЯ И СЛОТЫ ===== */
+const tm=s=>{const[a,b]=s.split(':');return +a*60+ +b},fm=n=>p2(Math.floor(n/60))+':'+p2(n%60);
+const dk=d=>d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()),dt=k=>new Date(k+'T00:00'),wd=d=>(d.getDay()+6)%7;
+const WKK=['жс','дс','сс','ср','бс','жм','сб'],MKK=['қаң','ақп','нау','сәу','мам','мау','шіл','там','қыр','қаз','қар','жел'];
+const fD=k=>{const d=dt(k);return LANG=='kk'?WKK[d.getDay()]+', '+d.getDate()+' '+MKK[d.getMonth()]:d.toLocaleDateString(LOC[LANG],{weekday:'short',day:'numeric',month:'short'})};
+function slots(k,dur){const s=SC(),d=dt(k),w=s.W[wd(d)];if(s.X[k]==='off'||!w||(!w.on&&s.X[k]!=='on'))return[];
+ const now=new Date(),isT=dk(now)===k,nm=now.getHours()*60+now.getMinutes()+30,bs=col('B').filter(b=>b.date===k&&b.st!='x').map(b=>[tm(b.time),tm(b.time)+b.dur]),r=[];
+ for(let t=tm(w.f);t+dur<=tm(w.t);t+=30){if(isT&&t<nm)continue;if(!bs.some(([a,e])=>t<e&&t+dur>a))r.push(fm(t))}return r}
+const dur=m=>{const u={ru:['ч','мин'],kk:['сағ','мин'],en:['h','min']}[LANG];return m>=60?m/60+' '+u[0]:m+' '+u[1]};
+/* ===== ИНТЕРФЕЙС ===== */
+let role=ld('dm_role','c'),tab=ld('dm_tab','home'),after=null,pre=null,CART=ld('dm_cart',{}),RV={s:5,img:''},L=[],CH=[],stp='svc',D={},LG={};
+mAuth=ld('dm_ma',null)?1:0;
+if(role=='m'&&!mAuth)role='c';
+if(role=='m'?!/^(ord|sch|cli|inb|set)$/.test(tab):!/^(home|svc|mp|gal|shop|rev|about|contact|me)$/.test(tab)||(tab=='me'&&!curU()))tab=role=='m'?'ord':'home';
+const msave=()=>sv('dm_ma',{t:Date.now()});
+const nc=()=>col('B').filter(b=>b.nw).length+col('O').filter(o=>o.nw).length,ni=()=>col('M').filter(m=>m.nw).length+col('R').filter(r=>r.nw).length;
+function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',5000)}
+const DR=[['home','home','Главная'],['svc','scissors','Услуги'],['mp','user','О мастере'],['shop','bag','Магазин'],['gal','image','Галерея работ'],['rev','star','Отзывы'],['me','gift','Бонусы и профиль'],['about','info','О приложении'],['contact','phone','Связаться с мастером']];
+const TB={c:[['home','home','Главная'],['bot','cal','Запись'],['shop','bag','Магазин'],['me','user','Профиль']],m:[['ord','list','Заказы'],['sch','cal2','График'],['cli','users','Клиенты'],['inb','mail','Входящие'],['set','sl','Настройки']]};
+function dr(o){$('#dr').classList.toggle('on',!!o);$('#ov').style.display=o?'block':'none';
+ if(o)$('#dr').innerHTML='<h3>Меню</h3>'+lgChips()+DR.map(([k,i,l])=>`<button onclick="dr(0);setRole('c');go('${k}')">${ico(i,20)}<span>${l}</span>${k=='contact'&&cu()?`<b class="ub">${cu()}</b>`:''}</button>`).join('')+(curU()?`<button onclick="out()">${ico('logout',20)}<span>Выйти</span></button>`:'')}
+function nav(){document.body.className=(role=='m'?'mst':'')+(role=='c'&&cu()?' unr':'');$('#seg').innerHTML=`<button class="${role=='c'?'on':''}" onclick="setRole('c')">Клиент</button><button class="${role=='m'?'on':''}" onclick="setRole('m')">Мастер${nc()+ni()?' 🔔':''}</button>`;
+ $('#nav').innerHTML=(role=='m'&&!mAuth?[]:TB[role]).map(([k,i,l])=>{const n=k=='ord'?nc():k=='inb'?ni():0;return `<button class="${tab==k?'on':''}" onclick="go('${k}')"><span>${ico(i,22)}</span>${l}${n?`<b class="bd">${n}</b>`:''}</button>`}).join('');
+ $('#inp').style.display=tab=='bot'?'flex':'none'}
+const fsReq=()=>{const e=document.documentElement;try{if(e.requestFullscreen&&!document.fullscreenElement)e.requestFullscreen().catch(()=>{})}catch(x){}};
+const fsT=()=>{try{document.fullscreenElement?document.exitFullscreen():fsReq()}catch(x){}};
+function go(k){CT='';if(k=='set')fsReq();else if(document.fullscreenElement){try{document.exitFullscreen()}catch(x){}}if(k=='set'&&tab=='set')sub='';if(role=='c'&&(k=='bot')&&!curU()){after=k;k='login';LG={}}
+ if(k=='bot'&&(!L.length||pre)){botStart(pre);pre=null}tab=k;if(k!='login'&&k!='mlogin'&&k!='bot')sv('dm_tab',k);nav();R();$('#main').scrollTop=0}
+function setRole(r){role=r;if(r=='m'){tab=mAuth?'ord':'mlogin'}else if(tab.match(/^(ord|sch|cli|inb|set|mlogin)$/))tab='home';sv('dm_role',role);if(tab!='mlogin')sv('dm_tab',tab);nav();R()}
+function R(){bS();if(tab!='set'){sub='';$('#fs').style.display='none'}({home:rHome,svc:rSvc,mp:rMP,gal:rGal,shop:rShop,rev:rRev,me:rMe,about:rAbout,contact:rCon,bot:rBot,login:rLogin,mlogin:rML,ord:rOrd,sch:rSch,cli:rCli,inb:rInb,set:rSet})[tab]();if(tab=='set')genR()}
+const stars=n=>'★'.repeat(n)+'☆'.repeat(5-n),pubs=()=>col('R').filter(r=>r.pub);
+const svcCard=s=>`<div class="sc"><button class="card svc" onclick="pre='${s.id}';go('bot')"><i class="si">${ico(SI[s.id]||s.ic||'scissors',26)}</i><span><b>${esc(s.n)}</b><small>${esc(s.d||'')}${s.d?' · ':''}${dur(s.m)}</small></span><span class="pr">${s.p}</span></button>${s.im&&s.im.length?`<div class="sph">${s.im.map((u,i)=>`<img src="${u}" alt="" onclick="lbo(S.find(x=>x.id=='${s.id}').im,${i})">`).join('')}</div>`:''}</div>`;
+const gim=x=>Array.isArray(x.im)?x.im:(x.im?[x.im]:[]);
+const gall=()=>col('GL').slice().sort((a,b)=>b.u-a.u).map(x=>({ph:gim(x),gid:x.id})).filter(w=>w.ph.length).concat(G.map((u,i)=>({ph:[u],id:'b'+i})).filter(w=>!col('GH').some(x=>x.id==w.id)));
+const gtile=(w,i)=>`<div style="background:url(${w.ph[0]}) center/cover" onclick="lbw(${i})">${w.ph.length>1?`<span class="cnt">${ico('image',12)} ${w.ph.length}</span>`:''}</div>`;
+const lbw=i=>lbo(gall()[i].ph,0);
+function gdelw(i){if(role!='m'||!mAuth)return;const w=gall()[i];if(!w||!confirm(w.gid?'Удалить работу?':'Удалить фото?'))return;if(w.gid)rm('GL',w.gid);else put('GH',{id:w.id});R()}
+const fp=n=>{n=dg(n||'');return n.length==11?'+'+n[0]+' '+n.slice(1,4)+' '+n.slice(4,7)+' '+n.slice(7,9)+' '+n.slice(9):n?'+'+n:''};
+const infoCard=()=>{const c=CF();return `<div class="card"><div class="row"><span>${ico('phone',18)} WhatsApp</span><b>${fp(c.wa)}</b></div><div class="row" style="margin-top:8px"><span>${ico('phone',18)} Звонки</span><b>${fp(c.tel||c.wa)}</b></div>${c.kp?`<div class="row" style="margin-top:8px"><span>${ico('bag',18)} KaspiGold</span><b>${fp(c.kp)}</b></div>`:''}<p class="mu" style="margin:10px 0 0">Оплата наличными или переводом на KaspiGold.</p></div>`};
+function shr(){const u=location.href.split('#')[0];if(navigator.share){navigator.share({title:'DIAMOND',url:u}).catch(()=>{})}else{try{navigator.clipboard.writeText(u);toast('Ссылка скопирована')}catch(e){}}}
+function rHome(){const pb=pubs().slice().reverse(),av=pb.length?(pb.reduce((a,r)=>a+r.stars,0)/pb.length).toFixed(1):'',g=gall();
+ $('#main').innerHTML=`<div class="hero"><h2>Салон «DIAMOND»</h2><p>Профессиональные мужские стрижки. Борода, усы, брови и уход. Запись 24/7 через бота.</p><button class="btn" onclick="go('bot')">Записаться онлайн</button></div>
+ <h3>Мои работы</h3><div class="gal">${g.slice(0,9).map(gtile).join('')}</div>${g.length?'':'<div class="card mu">Фото работ скоро появятся.</div>'}<p><a href="#" onclick="go('gal');return false">Вся галерея →</a></p>
+ <div class="row"><h3 style="margin:16px 0 8px">Отзывы клиентов</h3>${av?`<span style="color:var(--g);font-weight:700">★ ${av} · ${pb.length}</span>`:''}</div>
+ ${pb.length?`<div class="rvs">${pb.map(r=>`<div class="rv"><div class="row"><b>${esc(r.name)}</b><span style="color:var(--g)">${stars(r.stars)}</span></div><p>${esc(r.text)}</p>${r.img?`<div class="rvi" style="background:url(${r.img}) center/cover" onclick="lbo(['${r.img}'],0)"></div>`:''}</div>`).join('')}</div>`:'<div class="card mu">Отзывов пока нет. Станьте первым!</div>'}
+ <button class="btn s" style="margin-top:8px" onclick="go('rev')">Все отзывы и написать отзыв</button>
+ <h3>Бонус</h3><div class="card">🎁 От ${CF().after} визитов — скидка ${CF().pct}% на услуги и товары.</div><h3>Контакты</h3>${infoCard()}`}
+const rSvc=()=>{$('#main').innerHTML='<h3 style="margin-top:0">Услуги</h3>'+grp(S).map(([g,l])=>`<h3 class="gh">${g}</h3>`+l.map(svcCard).join('')).join('')};
+const rGal=()=>{const g=gall();$('#main').innerHTML=`<h3 style="margin-top:0">Галерея работ</h3><p class="mu" style="margin-top:0">Нажмите на фото, чтобы открыть его на весь экран.</p><div class="gal">${g.map(gtile).join('')}</div>${g.length?'':'<div class="card mu">Фото работ скоро появятся.</div>'}${pubs().filter(r=>r.img).map(r=>`<div class="card"><img src="${r.img}" style="width:100%;border-radius:12px" onclick="lbo(['${r.img}'],0)"><div>${esc(r.name)} ${stars(r.stars)}</div></div>`).join('')}`};
+const rvCard=r=>`<div class="card"><b>${esc(r.name)}</b> <span style="color:var(--g)">${stars(r.stars)}</span><br>${esc(r.text)}${r.img?`<img src="${r.img}" style="width:100%;border-radius:12px;margin-top:6px">`:''}</div>`;
+/* --- Вход клиента: регистрация + код 4 цифры (как в Google Authenticator) --- */
+function rLogin(){const c=CF(),u=LG.u;if(LG.m){$('#main').innerHTML=`<div class="card"><h3 style="margin-top:0">Вход мастера</h3><p>Введите пароль.</p><input class="f" id="mpw" type="password" placeholder="Пароль" autocomplete="current-password" onkeydown="if(event.key=='Enter')mpass()"><button class="btn" onclick="mpass()">Войти</button> <button class="btn s" onclick="LG={};rLogin()">Назад</button></div>`;setTimeout(()=>{const e=$('#mpw');e&&e.focus()},50);return}
+ $('#main').innerHTML=!u?`<div class="card"><h3 style="margin-top:0">Вход / регистрация</h3><input class="f" id="ln" placeholder="Ваше имя" value="${esc(LG.n||'')}"><div class="pf"><span>+7</span><input id="lp" type="tel" inputmode="numeric" maxlength="18" placeholder="700 000 00 00" value="${esc((LG.p||'').replace(/^7/,''))}"></div><button class="btn" onclick="lgo()">Продолжить</button><p class="mu">Номер нужен мастеру, чтобы уточнять время записи по звонку или в WhatsApp.</p></div>`
+ :`<div class="card"><h3 style="margin-top:0">Подтверждение</h3><p>1. Запросите 4-значный код у мастера в WhatsApp.</p>${c.wa?`<a class="btn" style="display:inline-block;text-decoration:none" href="whatsapp://send?phone=${c.wa}&text=${encodeURIComponent(tr('Здравствуйте! Прошу код для входа в DIAMOND. Телефон: +')+u.phone)}" onclick="reqCode()">💬 Запросить код в WhatsApp</a><p class="mu" style="font-size:12px">Не открылось? <a target="_blank" rel="noopener" href="https://wa.me/${c.wa}?text=${encodeURIComponent(tr('Здравствуйте! Прошу код для входа в DIAMOND. Телефон: +')+u.phone)}">Открыть вручную</a></p>`:'<p class="mu">Мастер ещё не указал номер WhatsApp. Позвоните мастеру.</p>'}<p>2. Введите код. Он действует 3 минуты.</p><input class="f" id="lc" inputmode="numeric" maxlength="4" placeholder="••••"><button class="btn" onclick="lcode()">Войти</button> <button class="btn s" onclick="LG={};rLogin()">Назад</button></div>`}
+const cp=t=>{try{navigator.clipboard.writeText(t);toast('Текст скопирован. Вставьте его в чат WhatsApp.')}catch(e){}};
+function reqMsg(u){const t=Date.now();if(reqMsg.t&&t-reqMsg.t<60000)return;reqMsg.t=t;put('M',{id:'m'+t,uid:u.id,name:u.name,ph:u.phone,text:'🔐 Просит код для входа в приложение',nw:1,req:1})}
+function reqCode(){reqMsg(LG.u);cp(tr('Здравствуйте! Прошу код для входа в DIAMOND. Телефон: +')+LG.u.phone)}
+async function mpass(){const pw=$('#mpw').value,c=CF(),w=dg(c.wa).replace(/^8(?=\d{10}$)/,'7');const ok=c.ah?await sha(pw)===c.ah:dg(pw)===w.slice(-7);if(!ok)return toast('Неверный пароль');LG={};mAuth=1;msave();setRole('m')}
+function lgo(){const n=$('#ln').value.trim(),d=dg($('#lp').value).replace(/^[78](?=\d{10}$)/,''),p='7'+d;if(d.length==10&&p===dg(CF().wa).replace(/^8(?=\d{10}$)/,'7')){if(mAuth){setRole('m');return}LG={m:1};return rLogin()}if(!n||d.length!=10)return toast('Укажите имя и 10 цифр номера после +7');
+ let u=col('U').find(x=>x.phone==p);if(!u){u={id:'u'+Date.now(),phone:p,name:n,sec:rnd(),created:Date.now()};put('U',u);toast('🔔 Регистрация: '+n)}reqMsg(u);LG={u,n,p};rLogin()}
+async function lcode(){const v=$('#lc').value.trim(),s=LG.u.sec;let ok=0;for(const o of[0])if(await totp(s,o)===v)ok=1;if(!ok)return toast('Неверный или просроченный код');
+ me={uid:LG.u.id,exp:Date.now()+3650*864e5,u:{id:LG.u.id,name:LG.u.name,phone:LG.u.phone,sec:LG.u.sec}};sv('dm_me',me);LG={};toast('Добро пожаловать!');go(after||'me');after=null}
+function out(){me=null;sv('dm_me',null);sv('dm_tab','home');dr(0);L=[];go('home')}
+/* --- Профиль и бонусы --- */
+function rMe(){const u=curU();if(!u){after='me';LG={};tab='login';return nav(),rLogin()}const v=vis(u.id),c=CF(),pc=Math.min(100,v/c.after*100);
+ $('#main').innerHTML=`<div class="hero"><h2>${esc(u.name)}</h2><p>📱 ${esc(u.phone)}</p></div><div class="card"><b>🎁 Бонусная программа</b><div class="bar"><i style="width:${pc}%"></i></div>Визитов: ${v} из ${c.after}. ${v>=c.after?`<b>Ваша скидка ${c.pct}% активна!</b>`:`Ещё ${c.after-v} до скидки ${c.pct}%.`}</div>
+ <h3>Мои записи</h3>${col('B').filter(b=>b.uid==u.id).sort((a,b)=>(b.date+b.time).localeCompare(a.date+a.time)).map(b=>`<div class="card">${fD(b.date)} · ${b.time}<br>${esc(b.svc)} <span class="tag">${b.st=='done'?'был':b.st=='x'?'отмена':'ждёт'}</span></div>`).join('')||'<p class="mu">Записей пока нет.</p>'}
+ ${myPh()}<button class="btn s" style="margin-top:12px" onclick="out()">Выйти</button>`}
+/* --- Магазин --- */
+const price=p=>{const u=curU(),d=Math.min(60,(+p.d||0)+(u?loy(u.id):0));return[p.p*(1-d/100),d]};
+const cSave=()=>sv('dm_cart',CART);
+function cadd(id,d){CART[id]=Math.max(0,(CART[id]||0)+d);if(!CART[id])delete CART[id];cSave();rShop()}
+function cdel(id){delete CART[id];cSave();rShop()}
+function cclr(){CART={};cSave();rShop()}
+const cartHtml=()=>{const it=col('P').filter(p=>CART[p.id]),n=it.reduce((x,p)=>x+CART[p.id],0),tot=it.reduce((x,p)=>x+CART[p.id]*price(p)[0],0);
+ return `<div class="card cartc" id="cart"><div class="row"><b style="font-size:19px">🛒 Корзина</b>${n?`<span class="tag">${n} шт</span>`:''}</div>`+(it.length?it.map(p=>{const f=price(p)[0];return `<div class="crow"><div class="cn">${esc(p.n)}<small>${money(f)} × ${CART[p.id]} = <b>${money(f*CART[p.id])}</b></small></div><div class="stp"><button onclick="cadd('${p.id}',-1)">−</button><b>${CART[p.id]}</b><button onclick="cadd('${p.id}',1)">+</button></div><button class="cx" onclick="cdel('${p.id}')">×</button></div>`}).join('')+`<div class="row" style="margin-top:12px"><span style="font-size:16px">Итого:</span><b style="font-size:24px;color:var(--p)">${money(tot)}</b></div><button class="btn wa" onclick="wOrder()">💬 Заказать в WhatsApp</button><div class="row" style="margin-top:10px"><button class="btn s" onclick="order()">Заказать в приложении</button><button class="btn s" onclick="cclr()">Очистить</button></div>`:`<p class="mu" style="margin:8px 0 0;font-size:15px">Корзина пуста. Добавьте товары из каталога.</p>`)+`</div>`};
+function wOrder(){const it=col('P').filter(p=>CART[p.id]);if(!it.length)return toast('Корзина пуста');const c=CF(),u=curU(),w=dg(c.wa||'').replace(/^8(?=\d{10}$)/,'7');if(!w)return toast('Номер WhatsApp мастера не задан');
+ const tot=it.reduce((x,p)=>x+CART[p.id]*price(p)[0],0);
+ let m=tr('Здравствуйте! Хочу заказать в DIAMOND:')+'\n'+it.map((p,i)=>`${i+1}. ${tr(p.n)} × ${CART[p.id]} — ${money(price(p)[0]*CART[p.id])}`).join('\n')+'\n'+tr('Итого:')+' '+money(tot)+'\n'+tr('Самовывоз в салоне. Оплата наличными или переводом на KaspiGold.');
+ if(u)m+='\n'+tr('Имя:')+' '+u.name+'\n'+tr('Телефон:')+' +'+dg(u.phone);
+ window.open('https://wa.me/'+w+'?text='+encodeURIComponent(m),'_blank')}
+function rShop(){$('#main').innerHTML=`<h3 style="margin-top:0">Магазин салона</h3><p class="mu" style="margin-top:0">Самовывоз в салоне. Оплата наличными или переводом на KaspiGold.</p>`+cartHtml()+`<h3 class="gh">Каталог</h3>`+
+ col('P').map(p=>{const[f,d]=price(p),im=p.im||[],q=CART[p.id]||0;
+  return `<div class="card pr2"><div class="th2" ${im.length?`style="background-image:url(${im[0]})" onclick="lb('${p.id}',0)"`:''}>${im.length?'':ico('bag',30)}${im.length>1?`<span>${im.length}</span>`:''}</div><div class="bx"><div class="nm">${esc(p.n)}</div>${p.ds?`<div class="ds">${esc(p.ds)}</div>`:''}<div class="pp">${d?`<s>${money(p.p)}</s>`:''}${money(f)}${d?` <span class="tag">−${d}%</span>`:''}</div>${q?`<div class="stp"><button onclick="cadd('${p.id}',-1)">−</button><b>${q}</b><button onclick="cadd('${p.id}',1)">+</button></div>`:`<button class="btn" onclick="cadd('${p.id}',1)">В корзину</button>`}</div></div>`}).join('')}
+const pcar=p=>{const im=p.im||[];return im.length?`<div class="cw"><div class="car" onscroll="dsc(this)">${im.map((u,i)=>`<div class="pm" onclick="lb('${p.id}',${i})"><img src="${u}" alt=""></div>`).join('')}</div>${im.length>1?`<div class="dots">${im.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div><button class="ar l" onclick="cs(this,-1)">‹</button><button class="ar r" onclick="cs(this,1)">›</button>`:''}</div>`:`<div class="ph">${ico('bag',40)}</div>`};
+const cs=(b,d)=>{const c=b.parentElement.querySelector('.car');c.scrollBy({left:d*c.clientWidth,behavior:'smooth'})};
+const lbs=d=>{const c=$('#lbc');c.scrollBy({left:d*c.clientWidth,behavior:'smooth'})};
+const dsc=e=>{const i=Math.round(e.scrollLeft/e.clientWidth);[...e.nextElementSibling.children].forEach((d,j)=>d.className=j==i?'on':'')};
+function lbo(list,i){$('#lb').innerHTML=`<div class="car lbx" id="lbc" data-n="${list.length}" onscroll="lbn(this)">${list.map(u=>`<div class="sl" onclick="this.classList.toggle('z')"><img src="${u}"></div>`).join('')}</div><button class="lbk" onclick="lbc()">${ico('x',24)}</button><div class="lbt" id="lbt">${i+1} / ${list.length}</div><div class="lbh">Нажмите на фото, чтобы приблизить</div>${list.length>1?`<button class="ar l" onclick="lbs(-1)">‹</button><button class="ar r" onclick="lbs(1)">›</button>`:''}`;$('#lb').style.display='block';const c=$('#lbc');c.scrollLeft=i*c.clientWidth}
+const lbn=c=>{$('#lbt').textContent=(Math.round(c.scrollLeft/c.clientWidth)+1)+' / '+c.dataset.n};
+const lb=(id,i)=>lbo(getI('P',id).im,i);
+const lbc=()=>{$('#lb').style.display='none'};
+function order(){const u=curU();if(!u){after='shop';LG={};tab='login';nav();return rLogin()}
+ const it=col('P').filter(p=>CART[p.id]).map(p=>({n:p.n,q:CART[p.id],p:price(p)[0]}));put('O',{id:'o'+Date.now(),uid:u.id,name:u.name,ph:u.phone,it,tot:it.reduce((a,x)=>a+x.q*x.p,0),st:'new',nw:1});CART={};cSave();nav();toast('Заказ в чате с мастером');go('contact')}
+/* --- Отзывы --- */
+const myRev=()=>{const u=curU();if(!u)return'';const m=col('R').filter(r=>r.uid==u.id).slice().reverse();return m.length?'<h3>Мои отзывы</h3>'+m.map(r=>`<div class="card"><div class="row"><b style="color:var(--g)">${stars(r.stars)}</b><span class="tag">${r.pub?'опубликован':'на проверке'}</span></div>${esc(r.text)}${r.img?`<img src="${r.img}" style="width:100%;border-radius:12px;margin-top:6px">`:''}<div style="margin-top:6px">${r.img?`<button class="btn s" onclick="rvimg('${r.id}')">Удалить фото</button> `:''}<button class="btn s" onclick="rvdel('${r.id}')">Удалить</button></div></div>`).join(''):''};
+function rRev(){$('#main').innerHTML=`<h3 style="margin-top:0">Отзывы</h3>${pubs().slice().reverse().map(rvCard).join('')||'<p class="mu">Опубликованных отзывов пока нет.</p>'}${myRev()}<div class="card"><b>Оставить отзыв</b><div class="st">${[1,2,3,4,5].map(i=>`<button class="${i<=RV.s?'on':''}" onclick="RV.s=${i};rRev()">★</button>`).join('')}</div><textarea class="f" id="rt" rows="3" placeholder="Как всё прошло?"></textarea><label class="btn s" style="display:inline-block">📷 Фото причёски<input type="file" accept="image/*" hidden onchange="rph(this)"></label>${RV.img?`<img src="${RV.img}" style="width:80px;border-radius:10px;vertical-align:middle"> <button class="btn s" onclick="rvclr()">Убрать фото</button>`:''}<label style="display:block;margin:8px 0"><input type="checkbox" id="rc"> Разрешаю опубликовать отзыв и фото в приложении</label><button class="btn" onclick="rvSend()">Отправить</button></div>`}
+const img=(f,mx=720,q=.7)=>new Promise(r=>{const i=new Image,u=URL.createObjectURL(f);i.onload=()=>{const m=Math.min(1,mx/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*m;c.height=i.height*m;c.getContext('2d').drawImage(i,0,0,c.width,c.height);URL.revokeObjectURL(u);r(c.toDataURL('image/jpeg',q))};i.src=u});
+async function rph(i){if(i.files[0]){const t=$('#rt').value;RV.img=await img(i.files[0]);rRev();$('#rt').value=t}}
+function rvSend(){const u=curU();if(!u){after='rev';LG={};tab='login';nav();return rLogin()}const t=$('#rt').value.trim();if(!t)return toast('Напишите отзыв');
+ put('R',{id:'r'+Date.now(),uid:u.id,name:u.name,stars:RV.s,text:t,img:RV.img,ok:$('#rc').checked?1:0,pub:0,nw:1});RV={s:5,img:''};toast('Спасибо! Отзыв отправлен мастеру');rRev()}
+/* --- О приложении, связь --- */
+const QR='';
+const rAbout=()=>{$('#main').innerHTML=`<div class="hero" style="text-align:center"><img src="${document.querySelector('.lgo').src}" alt="" style="width:96px;height:96px;border-radius:50%;box-shadow:0 0 0 2px rgba(240,207,122,.85);margin-bottom:10px"><h2>О приложении</h2><p>«DIAMOND» — приложение мужской парикмахерской. Владелица и мастер — Гуля. Мужские стрижки, борода и усы, брови, уход.</p></div><div class="card">✅ Онлайн-запись через бота, даже без интернета<br>✅ Вход по коду из WhatsApp<br>✅ Бонусы за 5 визитов<br>✅ Магазин товаров салона со скидками<br>✅ Отзывы с фото<br>✅ Облачная синхронизация клиента и мастера</div>${infoCard()}<div class="card" style="text-align:center"><b>Поделиться приложением</b><p class="mu" style="margin:6px 0 12px">Отправьте ссылку друзьям. Приложение откроется сразу.</p><button class="btn" onclick="shr()">Поделиться</button></div><p class="mu">Версия 1.0</p>`};
+function rCon(){const c=CF(),u=curU();
+ if(u){let ch=0;col('M').forEach(m=>{if(m.uid==u.id&&m.from=='m'&&m.cn){m.cn=0;put('M',m);ch=1}});if(ch)nav()}
+ $('#main').innerHTML=`<h3 style="margin-top:0">Связаться с мастером</h3>${c.wa?`<a class="btn" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/${c.wa}?text=${encodeURIComponent(tr('Здравствуйте! Хочу записаться в DIAMOND.'))}">💬 WhatsApp</a> <a class="btn s" style="display:inline-block;text-decoration:none" href="tel:+${c.tel||c.wa}">📞 Позвонить</a>`:'<p class="mu">Мастер ещё не указал номер.</p>'}${c.addr?`<p>📍 ${esc(c.addr)}</p>`:''}${infoCard()}`+
+ (u?`<div class="card"><b>💬 Онлайн-чат с мастером</b><p class="mu" style="margin:4px 0 0">Спрашивайте об услугах, товарах и заказах. Ответ придёт сюда.</p>${chatBox(u.id,'c')}<div style="margin-top:10px"><button class="btn s" onclick="cattach()">🛒 Прикрепить заказ</button> <button class="btn s" onclick="go('shop')">Магазин</button></div></div>`
+ :`<div class="card"><b>💬 Онлайн-чат с мастером</b><p class="mu">Войдите, чтобы писать мастеру и видеть свои заказы в одном чате.</p><button class="btn" onclick="after='contact';LG={};tab='login';nav();rLogin()">Войти</button></div><div class="card"><b>Написать сообщение</b><textarea class="f" id="mt" rows="3" placeholder="Ваш вопрос мастеру"></textarea><input class="f" id="mn" placeholder="Имя и телефон"><button class="btn" onclick="msg()">Отправить</button></div>`);
+ if(u){if($('#ct'))$('#ct').value=CHD;chatRefresh(1)}}
+
+/* ===== ОНЛАЙН-ЧАТ ===== */
+let CHD='',CT='';
+const OST={new:'Новый',acc:'Принят',rdy:'Готов к выдаче',done:'Выдан',x:'Отменён'};
+const cu=()=>{const u=curU();return u?col('M').filter(m=>m.uid==u.id&&m.from=='m'&&m.cn).length:0};
+const hhmm=t=>{const d=new Date(t),n=new Date(),p=x=>String(x).padStart(2,'0');return(d.toDateString()==n.toDateString()?'':p(d.getDate())+'.'+p(d.getMonth()+1)+' ')+p(d.getHours())+':'+p(d.getMinutes())};
+const thr=uid=>{const id=x=>+String(x.id).replace(/\D/g,'')||0;return col('M').filter(m=>m.uid==uid).map(m=>({k:'m',t:id(m),x:m})).concat(col('O').filter(o=>o.uid==uid).map(o=>({k:'o',t:id(o),x:o}))).sort((a,b)=>a.t-b.t)};
+const stBtns=o=>['acc','rdy','done'].filter(x=>x!=(o.st||'new')&&(o.st||'new')!='x').map(x=>`<button class="btn s" onclick="ost('${o.id}','${x}')">${x=='acc'?'Принять':x=='rdy'?'Готов к выдаче':'Выдан'}</button>`).join(' ');
+function bub(e,v){
+ if(e.k=='o'){const o=e.x,st=o.st||'new';return `<div class="ob"><b>🛍 <span>Заказ</span> · ${money(o.tot)}</b><div class="ut">${o.it.map(i=>esc(i.n)+' × '+i.q+' — '+money(i.p*i.q)).join('<br>')}</div><div class="os">${OST[st]}</div><small style="display:block;opacity:.7">${hhmm(e.t)}</small>${v=='m'?stBtns(o):(st=='new'?`<button class="btn s" onclick="ocx('${o.id}')">Отменить заказ</button>`:'')}</div>`}
+ const m=e.x,mine=v=='m'?m.from=='m':m.from!='m';
+ return `<div class="bb ${mine?'mine':'oth'}">${m.img?`<img src="${m.img}" alt="" onclick="lbo([getI('M','${m.id}').img],0)">`:''}${m.text?`<span class="ut">${esc(m.text)}</span>`:''}${m.req&&v=='m'?`<div><button class="btn" onclick="kod('${m.uid}')">🔑 Код</button></div>`:''}<small>${hhmm(e.t)}</small></div>`}
+const chatHtml=(uid,v)=>{const t=thr(uid);return t.length?t.map(e=>bub(e,v)).join(''):'<p class="mu" style="text-align:center;margin:auto">Напишите мастеру. Ответ придёт сюда.</p>'};
+const chatBox=(uid,v)=>`<div class="chat" id="chl"></div><div class="cin"><label class="cph">📷<input type="file" accept="image/*" hidden onchange="cimg(this)"></label><textarea id="ct" class="f" rows="1" placeholder="${v=='m'?'Ответ клиенту':'Сообщение мастеру'}" oninput="CHD=this.value" onkeydown="if(event.key=='Enter'&&!event.shiftKey){event.preventDefault();csend()}"></textarea><button class="btn" onclick="csend()">➤</button></div>`;
+function chatRefresh(sc){const e=$('#chl');if(!e)return;const uid=role=='m'?CT:(curU()||{}).id;if(!uid)return;const near=e.scrollHeight-e.scrollTop-e.clientHeight<90;e.innerHTML=chatHtml(uid,role=='m'?'m':'c');if(sc||near)e.scrollTop=e.scrollHeight}
+function csend(im){const t=($('#ct')?$('#ct').value:'').trim();if(!t&&!im)return;
+ if(role=='m'){if(!mAuth||!CT)return;const u=getI('U',CT)||{};put('M',{id:'m'+Date.now(),uid:CT,name:u.name||'',ph:u.phone||'',text:t,img:im||'',from:'m',cn:1})}
+ else{const u=curU();if(!u)return;put('M',{id:'m'+Date.now(),uid:u.id,name:u.name,ph:u.phone,text:t,img:im||'',from:'c',nw:1})}
+ CHD='';if($('#ct'))$('#ct').value='';nav();chatRefresh(1)}
+async function cimg(inp){const f=inp.files[0];if(!f)return;const d=await img(f,800,.7);inp.value='';csend(d)}
+function cattach(){if(!col('P').some(p=>CART[p.id]))return toast('Корзина пуста. Добавьте товары в магазине.');order()}
+function ost(id,st){if(role!='m'||!mAuth)return;const o=getI('O',id);if(!o)return;o.st=st;o.nw=0;put('O',o);nav();R()}
+function ocx(id){const u=curU(),o=getI('O',id);if(!u||!o||o.uid!=u.id||(o.st||'new')!='new')return;if(!confirm('Отменить заказ?'))return;o.st='x';put('O',o);R()}
+function copen(uid){go('inb');CT=uid;R()}
+function cdelAll(){if(role!='m'||!mAuth||!CT)return;if(!confirm('Удалить переписку?'))return;col('M').filter(m=>m.uid==CT).forEach(m=>rm('M',m.id));CT='';nav();R()}
+function rThread(){const u=getI('U',CT)||{name:'Клиент',phone:''};
+ col('M').forEach(m=>{if(m.uid==CT&&m.nw){m.nw=0;put('M',m)}});col('O').forEach(o=>{if(o.uid==CT&&o.nw){o.nw=0;put('O',o)}});nav();
+ $('#main').innerHTML=`<div class="card row"><button class="btn s" onclick="CT='';R()">‹ Назад</button><b class="ut">${esc(u.name||'')}</b>${u.phone?`<a class="btn s" style="text-decoration:none" href="https://wa.me/${esc(u.phone)}?text=${encodeURIComponent(tr('Здравствуйте! Это мастер DIAMOND.'))}" target="_blank" rel="noopener">WhatsApp</a>`:''}</div>`+chatBox(CT,'m')+`<button class="btn s" onclick="cdelAll()">Удалить переписку</button>`;
+ if($('#ct'))$('#ct').value=CHD;chatRefresh(1)}
+function chatList(){const by={};col('M').filter(m=>m.uid).forEach(m=>{by[m.uid]=1});col('O').filter(o=>o.uid).forEach(o=>{by[o.uid]=1});
+ const rows=Object.keys(by).map(uid=>{const t=thr(uid),l=t[t.length-1],un=col('M').filter(m=>m.uid==uid&&m.from!='m'&&m.nw).length+col('O').filter(o=>o.uid==uid&&o.nw).length,u=getI('U',uid)||{name:(col('M').find(m=>m.uid==uid)||{}).name||'Клиент'};return{uid,u,l,un,t:l?l.t:0}}).sort((a,b)=>b.t-a.t);
+ return rows.length?rows.map(r=>`<div class="card chr ${r.un?'new':''}" onclick="copen('${r.uid}')"><i class="av">${esc((r.u.name||'?').charAt(0).toUpperCase())}</i><div class="chm"><b class="ut">${esc(r.u.name||'')}</b><small>${!r.l?'':r.l.k=='o'?'🛍 <span>Заказ</span> '+money(r.l.x.tot):(r.l.x.img&&!r.l.x.text?'📷':`<span class="ut">${esc((r.l.x.text||'').slice(0,60))}</span>`)}</small></div><div class="chr2">${r.l?hhmm(r.l.t):''}${r.un?`<span class="ub">${r.un}</span>`:''}</div></div>`).join(''):'<p class="mu">Чатов пока нет.</p>'}
+function msg(){const t=$('#mt').value.trim();if(!t)return;const u=curU(),w=$('#mn');put('M',{id:'m'+Date.now(),uid:u?u.id:'',name:u?u.name:(w?w.value:''),ph:u?u.phone:'',text:t,nw:1});toast('Сообщение отправлено');$('#mt').value=''}
+/* --- Бот (работает без интернета) --- */
+const say=(t,w='b')=>L.push({w,t});
+function botStart(id){bS();const u=curU();L=[];D={};stp='svc';say(`Здравствуйте${u?', '+u.name:''}! Я бот салона «DIAMOND». На какую услугу записать?`);CH=S.map(s=>[s.e+' '+s.n,()=>pick(s.id)]);if(id)pick(id);else if(tab=='bot'){nav();rBot()}}
+function pick(id){bS();const s=S.find(x=>x.id==id);D.s=s;say(s.n,'u');stp='date';const ds=[];for(let i=0;i<30&&ds.length<6;i++){const d=new Date();d.setDate(d.getDate()+i);const k=dk(d);if(slots(k,s.m).length)ds.push(k)}
+ if(!ds.length){say('Свободных дат нет. Мастер скоро обновит график.');CH=[['↩️ Заново',()=>botStart()]]}else{say(`${s.n}: ${s.p}, ${dur(s.m)}.\nВыберите дату:`);CH=ds.map(k=>[fD(k),()=>pdate(k)])}nav();if(tab=='bot')rBot()}
+function pdate(k){D.d=k;say(fD(k),'u');stp='time';say('Свободное время:');CH=slots(k,D.s.m).slice(0,12).map(t=>[t,()=>ptime(t)]);rBot()}
+function ptime(t){D.t=t;say(t,'u');stp='ok';const u=curU(),l=loy(u.id);say(`Проверьте запись:\n${D.s.e} ${D.s.n}\n📅 ${fD(D.d)}, ${D.t}\n👤 ${u.name}, +${u.phone}${l?`\n🎁 Ваша скидка: ${l}%`:''}`);CH=[['✅ Подтвердить',book],['↩️ Заново',()=>botStart()]];rBot()}
+function book(){const u=curU();say('Подтвердить','u');if(!slots(D.d,D.s.m).includes(D.t)){say('Это время занято. Выберите другое.');CH=[['↩️ Заново',()=>botStart()]];return rBot()}
+ put('B',{id:'b'+Date.now(),uid:u.id,date:D.d,time:D.t,svc:D.s.n,dur:D.s.m,name:u.name,ph:u.phone,nw:1,st:'new'});say(`Готово, ${u.name}! ${D.s.n}, ${fD(D.d)} в ${D.t}.\nМастер получил уведомление. Если время изменится, мастер позвонит вам.`);stp='done';CH=[['➕ Ещё запись',()=>botStart()]];toast('🔔 Новая запись: '+u.name);nav();rBot()}
+function faq(v){v=v.toLowerCase();const c=CF(),s=SC(),K={m:'стриж|haircut|\\bcut\\b|fade|фейд|шаш қи|машинк|clipper|детск|kids',b:'бород|усы|усов|мұрт|сақал|beard|mustache|moustache|бритьё|бритв|shave',r:'бров|brow|қас',e:'уши|ухо|ушах|нос|\\bear|nose|құлақ|мұрын',x:'массаж|мытьё|мытье|седин|камуфляж|massage|wash|grey|gray'};
+ const gk=Object.keys(K).find(k=>new RegExp(K[k]).test(v));if(gk){const l=S.filter(x=>x.id[0]==gk);if(l.length==1){pick(l[0].id);return 1}if(l.length){CH=l.map(x=>[x.e+' '+x.n,()=>pick(x.id)]);return 'Выберите услугу:'}}
+ if(/цен|прайс|сколько|стоим|price|cost|how much|баға|қанша/.test(v))return S.map(x=>`${x.e} ${x.n}: ${x.p}`).join('\n');
+ if(/оплат|kaspi|каспи|налич|перевод|\bpay|cash|төлем/.test(v))return 'Оплата наличными или переводом на KaspiGold: '+fp(c.kp||c.wa);
+ if(/бонус|скидк|акци|bonus|discount|жеңілдік/.test(v))return `🎁 От ${c.after} визитов скидка ${c.pct}% на услуги и товары.`;
+ if(/адрес|где|address|where|мекенжай|қайда/.test(v))return c.addr?'📍 '+c.addr:'Адрес уточните у мастера в разделе «Связаться».';
+ if(/врем|график|работа|открыт|hours|schedule|open|кесте|уақыт|жұмыс/.test(v))return s.W.map((w,i)=>`${DN[i]}: ${w.on?w.f+'–'+w.t:'выходной'}`).join('\n');
+ if(/отмен|перенес|cancel|resched|бас тарт/.test(v))return 'Для отмены или переноса напишите мастеру: меню → Связаться с мастером.';
+ if(/товар|шампун|воск|масл|бальзам|расчёск|купить|shop|product|buy|дүкен|тауар/.test(v))return 'Товары салона со скидками — во вкладке «Магазин».';
+ return 'Я могу записать вас на услугу, назвать цены, график и бонусы. Выберите кнопку или напишите вопрос.'}
+function send(){const i=$('#tx'),v=i.value.trim();if(!v)return;i.value='';say(v,'u');const r=faq(v);if(r===1)return;say(r);rBot()}
+function rBot(){const m=$('#main');m.innerHTML=`<div id="chat">${L.map(x=>`<div class="m ${x.w}">${esc(x.t)}</div>`).join('')}<div class="ch">${CH.map((c,i)=>`<button onclick="CH[${i}][1]()">${esc(c[0])}</button>`).join('')}</div></div>`;m.scrollTop=m.scrollHeight}
+$('#tx').addEventListener('keydown',e=>{if(e.key=='Enter')send()});
+/* ===== КАБИНЕТ МАСТЕРА ===== */
+function rML(){$('#main').innerHTML=`<div class="card"><h3 style="margin-top:0">Кабинет мастера</h3><input class="f" id="ml" placeholder="Логин (имя админа или номер WhatsApp)" autocapitalize="off"><input class="f" id="mp" type="password" placeholder="Пароль"><button class="btn" onclick="mlog()">Войти</button></div>`}
+async function chk(l,pw){const c=CF(),nm=x=>dg(x).replace(/^8(?=\d{10}$)/,'7');
+ if(c.ah)return String(l).trim().toLowerCase()===String(c.an).toLowerCase()&&await sha(pw)===c.ah;
+ const w=nm(c.wa);return w.length>=10&&nm(l)===w&&dg(pw)===w.slice(-7)}
+async function mlog(){if(!(await chk($('#ml').value,$('#mp').value)))return toast('Неверный логин или пароль');mAuth=1;msave();setRole('m')}
+function rOrd(){const td=dk(new Date()),a=col('B').filter(b=>b.st!='x').sort((x,y)=>(x.date+x.time).localeCompare(y.date+y.time)),o=col('O').filter(x=>x.st!='done'&&x.st!='x').sort((x,y)=>y.id.localeCompare(x.id));
+ $('#main').innerHTML=`<div class="card row"><span>🔔 Новых: <b>${nc()}</b> · Сегодня: <b>${a.filter(b=>b.date==td).length}</b></span><button class="btn s" onclick="col('B').concat(col('O')).forEach(x=>{if(x.nw){x.nw=0;put(x.tot!=null?'O':'B',x)}});nav();R()">Прочитано</button></div>`+
+ (o.length?'<h3>Заказы товаров</h3>'+o.map(x=>`<div class="card ${x.nw?'new':''}"><b>${esc(x.name)}</b> · <a href="tel:+${esc(x.ph)}">+${esc(x.ph)}</a><br>${x.it.map(i=>esc(i.n)+' ×'+i.q).join(', ')}<br><b>${money(x.tot)}</b> <span class="os">${OST[x.st||'new']}</span><div style="margin-top:6px">${stBtns(x)} <button class="btn s" onclick="copen('${x.uid}')">💬 Чат</button></div></div>`).join(''):'')+
+ '<h3>Записи</h3>'+(a.map(b=>`<div class="card ${b.nw?'new':''}"><div class="row"><b>${fD(b.date)} · ${b.time}–${fm(tm(b.time)+b.dur)}</b>${b.st=='done'?'<span class="tag">был</span>':b.nw?'<span class="tag">новая</span>':''}</div>${esc(b.svc)}<br>👤 ${esc(b.name)} · <a href="tel:+${esc(b.ph)}">+${esc(b.ph)}</a><div style="margin-top:6px"><button class="btn s" onclick="bst('${b.id}','done')">✔ Пришёл</button> <button class="btn s" onclick="bst('${b.id}','x')">Отменить</button></div></div>`).join('')||'<p class="mu">Записей пока нет.</p>')}
+function bst(id,s){const b=getI('B',id);b.st=s;b.nw=0;put('B',b);nav();R()}
+const hrs=(v,a,b)=>{let o='';for(let h=a;h<=b;h++){const s=p2(h)+':00';o+=`<option ${s==v?'selected':''}>${s}</option>`}return o};
+function rSch(){const s=SC(),t=new Date(),c=['<div class="cal">'+DN.map(d=>`<button class="hd">${d}</button>`).join('')];for(let i=0;i<wd(t);i++)c.push('<button class="hd"></button>');
+ for(let i=0;i<28;i++){const d=new Date();d.setDate(t.getDate()+i);const k=dk(d),off=s.X[k]==='off'||(!s.W[wd(d)].on&&s.X[k]!=='on');c.push(`<button class="${off?'off':''} ${col('B').some(b=>b.date==k&&b.st!='x')?'bk':''}" onclick="tg('${k}')">${d.getDate()}</button>`)}
+ $('#main').innerHTML='<h3 style="margin-top:0">Неделя</h3>'+s.W.map((w,i)=>`<div class="card row"><b style="width:28px">${DN[i]}</b><button class="sw ${w.on?'on':''}" onclick="sw(${i})"></button><span><select onchange="swt(${i},'f',this.value)">${hrs(w.f,7,21)}</select> – <select onchange="swt(${i},'t',this.value)">${hrs(w.t,8,23)}</select></span></div>`).join('')+`<h3>Месяц (28 дней)</h3><p class="mu" style="margin:0 0 8px">Нажмите день: выходной или рабочий. Рамка: есть записи.</p>${c.join('')}</div>`}
+const sw=i=>{const s=SC();s.W[i].on^=1;put('S',s);rSch()},swt=(i,k,v)=>{const s=SC();s.W[i][k]=v;put('S',s)};
+function tg(k){const s=SC(),b=s.W[wd(dt(k))].on;if(s.X[k]==='off')delete s.X[k];else s.X[k]=b?'off':'on';put('S',s);rSch()}
+function rCli(){$('#main').innerHTML=`<h3 style="margin-top:0">Клиенты (${col('U').length})</h3><p class="mu">Код входа: нажмите «Код» и отправьте клиенту в WhatsApp. Код действует 3 минуты.</p>`+col('U').map(u=>`<div class="card"><div class="row"><b>${esc(u.name)}</b><span class="tag">визитов: ${vis(u.id)}</span></div><a href="tel:+${esc(u.phone)}">+${esc(u.phone)}</a> · <a target="_blank" rel="noopener" href="https://wa.me/${esc(u.phone)}?text=${encodeURIComponent(tr('Здравствуйте! Это мастер DIAMOND.'))}">WhatsApp</a><div style="margin-top:6px"><button class="btn" onclick="kod('${u.id}')">🔑 Код</button> <button class="btn s" onclick="if(confirm('Удалить клиента?')){rm('U','${u.id}');rCli()}">Удалить</button></div></div>`).join('')}
+async function kod(id){const u=getI('U',id),c=await totp(u.sec),m=tr('Ваш код входа в DIAMOND:')+' '+c+'\n'+tr('Код действует 3 минуты.');toast(`🔑 Код для ${u.name}: ${c}`);try{window.open('https://wa.me/'+dg(u.phone)+'?text='+encodeURIComponent(m),'_blank')}catch(e){}}
+function rInb(){if(CT)return rThread();$('#main').innerHTML=`<div class="card row"><span>Новых: <b>${ni()}</b></span><button class="btn s" onclick="col('M').concat(col('R')).forEach(x=>{if(x.nw){x.nw=0;put(x.stars?'R':'M',x)}});nav();R()">Прочитано</button></div><h3>Чаты</h3>`+chatList()+`<h3>Сообщения без входа</h3>`+(col('M').filter(m=>!m.uid).slice().reverse().map(m=>`<div class="card ${m.nw?'new':''}"><b class="ut">${esc(m.name)}</b><br><span class="ut">${esc(m.text)}</span><div style="margin-top:6px"><button class="btn s" onclick="rm('M','${m.id}');rInb()">Удалить</button></div></div>`).join('')||'<p class="mu">Сообщений нет.</p>')+
+ '<h3>Отзывы</h3>'+(col('R').slice().reverse().map(r=>`<div class="card ${r.nw?'new':''}">${rvCard(r).replace('class="card"','')}<div>${r.ok?'✅ Клиент разрешил публикацию':'⛔ Публикация не разрешена'}</div><div style="margin-top:6px">${r.pub?`<button class="btn s" onclick="rp('${r.id}',0)">Скрыть</button>`:r.ok?`<button class="btn" onclick="rp('${r.id}',1)">Опубликовать</button>`:''} ${r.img?`<button class="btn s" onclick="rpd('${r.id}')">Удалить фото</button> `:''}<button class="btn s" onclick="rvdel2('${r.id}')">Удалить отзыв</button></div></div>`).join('')||'<p class="mu">Отзывов нет.</p>')}
+function rpd(id){if(role!='m'||!mAuth)return;if(!confirm('Удалить фото?'))return;const r=getI('R',id);r.img='';put('R',r);R()}
+function rvdel2(id){if(confirm('Удалить отзыв?')){rm('R',id);rInb()}}
+function rvdel(id){const u=curU(),r=getI('R',id);if(!u||!r||r.uid!=u.id)return;if(confirm('Удалить отзыв?')){rm('R',id);R()}}
+function rvimg(id){const u=curU(),r=getI('R',id);if(!u||!r||r.uid!=u.id)return;if(!confirm('Удалить фото?'))return;r.img='';put('R',r);toast('Фото удалено');R()}
+function rvclr(){const t=$('#rt')?$('#rt').value:'';RV.img='';rRev();if($('#rt'))$('#rt').value=t}
+const myPh=()=>{const u=curU();if(!u)return'';const m=col('R').filter(r=>r.uid==u.id&&r.img).slice().reverse();return `<h3>Мои фото причёсок</h3>`+(m.length?`<div class="mph">${m.map(r=>`<div class="mpi" style="background-image:url(${r.img})" onclick="lbo([getI('R','${r.id}').img],0)"><button onclick="event.stopPropagation();rvimg('${r.id}')">×</button></div>`).join('')}</div>`:'<p class="mu">Фото пока нет. Добавьте фото в отзыве.</p>')};
+function rp(id,v){const r=getI('R',id);r.pub=v;r.nw=0;put('R',r);nav();rInb()}
+let sub='';
+const ssub=k=>{sub=k;rSet()};
+function rSet(){const c=CF(),f=$('#fs'),keep=f._s===sub&&$('#fsc')?$('#fsc').scrollTop:0;let o,ttl='Настройки';
+ if(sub=='gen'){ttl='Генератор 2FA';o=`<p class="mu" style="margin-top:0">Код клиента действует 3 минуты и меняется сам. Отправьте его клиенту в WhatsApp.</p><div class="card"><div id="gen"></div></div>`}
+ else if(sub=='mp'){ttl='Моя страница';o=mpAdmin()}
+ else if(sub=='svc'){ttl='Услуги и цены';o=svcAdmin()}
+ else if(sub=='prod'){ttl='Товары';o=`${prodAdmin()}<div class="card"><b>Добавить товар</b><input class="f" id="an" placeholder="Название"><input class="f" id="ap" type="number" placeholder="Цена, ₸"><button class="btn" onclick="ap()">Добавить</button></div>`}
+ else if(sub=='gal'){ttl='Галерея работ';const ws=col('GL').slice().sort((a,b)=>b.u-a.u);o=`<p class="mu" style="margin-top:0">Одна работа — до 6 фото с разных ракурсов. Ваши работы идут первыми на главном экране.</p><label class="btn" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:10px">${ico('camera',20)} Добавить работу<input type="file" accept="image/*" multiple hidden onchange="gnew(this)"></label>${ws.map((x,k)=>{const im=gim(x);return `<div class="card"><div class="row"><b>Работа ${ws.length-k}</b><button class="btn s" onclick="if(confirm('Удалить работу?'))gdel('${x.id}')">Удалить</button></div><div class="pth">${im.map((u,i)=>`<div style="background:var(--bg) url(${u}) center/contain no-repeat" onclick="lbo(gim(getI('GL','${x.id}')),${i})"><button onclick="event.stopPropagation();gpdel('${x.id}',${i})">×</button></div>`).join('')}${im.length<6?`<label class="add">${ico('camera',22)}<small>${im.length}/6</small><input type="file" accept="image/*" multiple hidden onchange="gmore('${x.id}',this)"></label>`:''}</div></div>`}).join('')}${ws.length?'':'<p class="mu">Своих работ пока нет. Добавьте первую работу.</p>'}${(()=>{const rs=col('R').filter(r=>r.img);return rs.length?`<h3>Фото из отзывов</h3><div class="mph">${rs.map(r=>`<div class="mpi" style="background-image:url(${r.img})" onclick="lbo([getI('R','${r.id}').img],0)"><button onclick="event.stopPropagation();rpd('${r.id}')">×</button></div>`).join('')}</div>`:''})()}<div class="gal">${G.map((u,i)=>col('GH').some(x=>x.id=='b'+i)?'':`<div style="background:url(${u}) center/cover;position:relative"><button class="gx" onclick="if(confirm('Скрыть фото из галереи?'))ghide('b${i}')">×</button></div>`).join('')}</div>${col('GH').length?`<button class="btn s" style="margin-top:10px" onclick="gshow()">Восстановить скрытые (${col('GH').length})</button>`:''}`}
+ else if(sub=='adm'){ttl='Настройки мастера';o=`<div class="card"><label>WhatsApp (цифры с кодом страны, без +)</label><input class="f" id="sw" value="${esc(c.wa)}" placeholder="77001234567"><label>Номер для звонков</label><input class="f" id="stl" value="${esc(c.tel||'')}" placeholder="77001234567"><label>KaspiGold (номер для переводов)</label><input class="f" id="skp" value="${esc(c.kp||'')}" placeholder="77001234567"><label>Адрес салона</label><input class="f" id="sa" value="${esc(c.addr)}"><label>Бонус: визитов до скидки</label><input class="f" id="sn" type="number" value="${c.after}"><label>Размер скидки, %</label><input class="f" id="sp" type="number" value="${c.pct}"><button class="btn" onclick="setCF({wa:dg($('#sw').value),tel:dg($('#stl').value),kp:dg($('#skp').value),addr:$('#sa').value,after:+$('#sn').value||5,pct:+$('#sp').value||0});toast('Сохранено')">Сохранить</button></div>
+ <h3>Админ мастера</h3><div class="card"><label>Имя админа</label><input class="f" id="adn" value="${esc(c.an||'')}" placeholder="Новое имя" autocapitalize="off"><label>Текущий пароль</label><input class="f" id="ado" type="password"><label>Новый пароль (минимум 6 символов)</label><input class="f" id="adp" type="password"><button class="btn" onclick="sadm()">Сохранить имя и пароль</button></div>
+ <h3>Облако</h3><div class="card">${CLOUD.url?'Подключено ☁️':'Не подключено 💾 (данные только на этом устройстве)'}<br><button class="btn s" onclick="sync();toast('Синхронизация…')">Синхронизировать</button> <button class="btn s" onclick="chkCloud()">Проверить облако</button></div>`}
+ else o=[['gen','key','Генератор 2FA','Коды входа для клиентов'],['mp','user','Моя страница','Текст о себе и фото с подписями'],['svc','scissors','Услуги и цены','Редактор, цены и фото работ'],['prod','bag','Товары','Фото, цены и скидки'],['gal','image','Галерея работ','Фото для главного экрана'],['adm','user','Настройки мастера','Контакты, бонусы, имя и пароль админа, облако']].map(([k,i,t,d])=>`<button class="card svc" onclick="ssub('${k}')"><i class="si">${ico(i,24)}</i><span><b>${t}</b><small>${d}</small></span><span class="pr" style="color:var(--mu)">${ico('chev',20)}</span></button>`).join('')+`<button class="btn s" onclick="mlo()">Выйти из кабинета</button>`;
+ f._s=sub;f.style.display='flex';f.innerHTML=`<div class="fsb"><button onclick="${sub?"ssub('')":"go('ord')"}">${ico(sub?'back':'x',22)}</button><b>${ttl}</b><button style="margin-left:auto" onclick="fsT()">${ico('full',20)}</button></div><div class="fsc" id="fsc">${o}</div>`;$('#fsc').scrollTop=keep;if(sub=='gen')genR()}
+const gdel=id=>{if(role!='m'||!mAuth)return;rm('GL',id);rSet()};
+const ghide=id=>{if(role!='m'||!mAuth)return;put('GH',{id});rSet()};
+const gshow=()=>{if(role!='m'||!mAuth)return;col('GH').forEach(x=>rm('GH',x.id));rSet()};
+async function gnew(inp){const fs=[...inp.files].slice(0,6);if(!fs.length)return;toast('Загрузка…');const im=[];for(const f of fs)im.push(await img(f,900,.7));put('GL',{id:'g'+Date.now()+Math.random().toString(36).slice(2,6),im});toast('Работа добавлена: '+im.length+' фото');rSet()}
+async function gmore(id,inp){const x=getI('GL',id),im=gim(x).slice();for(const f of[...inp.files].slice(0,6-im.length))im.push(await img(f,900,.7));x.im=im;put('GL',x);rSet()}
+function gpdel(id,i){if(role!='m'||!mAuth)return;const x=getI('GL',id),im=gim(x).slice();im.splice(i,1);if(!im.length)return gdel(id);x.im=im;put('GL',x);rSet()}
+function prodAdmin(){return col('P').map(p=>{const im=p.im||[];return `<div class="card"><div class="row"><b>${esc(p.n)}</b><button class="btn s" onclick="pe('${p.id}')">Изменить</button></div><div class="mu">${money(p.p)} · скидка ${p.d||0}%</div>${p.ds?`<div class="mu">${esc(p.ds)}</div>`:''}<div class="pth">${im.map((u,i)=>`<div style="background:var(--bg) url(${u}) center/contain no-repeat" onclick="lb('${p.id}',${i})"><button onclick="event.stopPropagation();pdel('${p.id}',${i})">×</button></div>`).join('')}${im.length<3?`<label class="add">${ico('camera',22)}<small>${im.length}/3</small><input type="file" accept="image/*" multiple hidden onchange="padd('${p.id}',this)"></label>`:''}</div><div style="margin-top:8px"><button class="btn s" onclick="pd('${p.id}')">Скидка %</button> <button class="btn s" onclick="if(confirm('Удалить товар?')){rm('P','${p.id}');rSet()}">Удалить</button></div></div>`}).join('')}
+async function padd(id,inp){const p=getI('P',id);p.im=p.im||[];for(const f of[...inp.files].slice(0,3-p.im.length))p.im.push(await img(f,560,.66));put('P',p);rSet()}
+function pdel(id,i){const p=getI('P',id);p.im.splice(i,1);put('P',p);rSet()}
+function pe(id){const p=getI('P',id),n=prompt('Название',p.n);if(n===null)return;const c=prompt('Цена, ₸',p.p);if(c===null)return;const ds=prompt('Описание товара',p.ds||'');if(ds===null)return;p.n=n.trim()||p.n;p.p=+c||p.p;p.ds=ds.trim();put('P',p);rSet()}
+function pd(id){const p=getI('P',id),v=prompt('Скидка на товар, %',p.d||0);if(v!==null){p.d=Math.max(0,Math.min(60,+v||0));put('P',p);rSet()}}
+function ap(){const n=$('#an').value.trim(),p=+$('#ap').value;if(!n||!p)return toast('Название и цена');put('P',{id:'p'+Date.now(),n,e:'🧴',p,d:0});rSet()}
+
+/* ===== РЕДАКТОР УСЛУГ ===== */
+let SE='';
+function svcAdmin(){
+ return `<p class="mu" style="margin-top:0">Измените название, цену, время и описание. Добавьте до 5 фото работ. Клиент видит фото в разделе «Услуги».</p>`+grp(SA).map(([g,l])=>`<h3 class="gh">${g}</h3>`+l.map(s=>{
+  const ed=SE==s.id;
+  const form=ed?`<label>Название</label><input class="f" id="sen" value="${esc(s.n)}"><label>Цена, ₸ (пусто — «Цена по запросу»)</label><input class="f" id="sep" type="number" inputmode="numeric" value="${s.pn}"><label><input type="checkbox" id="sef" ${s.f==1?'checked':''}> Цена «от»</label><label>Время, мин</label><input class="f" id="sem" type="number" inputmode="numeric" step="5" value="${s.m}"><label>Описание</label><input class="f" id="sed" value="${esc(s.d||'')}"><button class="btn" onclick="ssave('${s.id}')">Сохранить</button>`:'';
+  return `<div class="card"><div class="row"><b>${esc(s.n)}</b><span class="pr">${s.p}</span></div><div class="mu">${dur(s.m)}${s.vis?'':' · скрыта от клиентов'}</div><div class="pth">${s.im.map((u,i)=>`<div style="background:var(--bg) url(${u}) center/contain no-repeat" onclick="lbo(SA.find(x=>x.id=='${s.id}').im,${i})"><button onclick="event.stopPropagation();sidel('${s.id}',${i})">×</button></div>`).join('')}${s.im.length<5?`<label class="add">${ico('camera',22)}<small>${s.im.length}/5</small><input type="file" accept="image/*" multiple hidden onchange="siadd('${s.id}',this)"></label>`:''}</div>${form}<div style="margin-top:8px"><button class="btn s" onclick="SE='${ed?'':s.id}';rSet()">${ed?'Закрыть':'Изменить'}</button> <button class="btn s" onclick="svis('${s.id}')">${s.vis?'Скрыть':'Показать'}</button> <button class="btn s" onclick="sdel('${s.id}')">Удалить</button></div></div>`}).join('')).join('')
+  +`<div class="card"><b>Добавить услугу</b><input class="f" id="snn" placeholder="Название"><select class="f" id="snc">${SCAT.map((c,i)=>`<option value="${i}">${c[0]}</option>`).join('')}</select><input class="f" id="snp" type="number" inputmode="numeric" placeholder="Цена, ₸"><input class="f" id="snm" type="number" inputmode="numeric" placeholder="Время, мин (60)"><button class="btn" onclick="snew()">Добавить</button></div>`}
+const sRec=id=>{const s=SA.find(x=>x.id==id);return getI('V',id)||{id,n:s.n,e:s.e,ic:s.ic||SI[id],g:s.g,m:s.m,d:s.d,im:s.im.slice(),vis:s.vis?1:0,pn:s.pn,f:s.f||0,c:Date.now()}};
+const sput=x=>{put('V',x);rSet()};
+function ssave(id){const x=sRec(id),n=$('#sen').value.trim();if(!n)return toast('Введите название');const p=$('#sep').value;x.n=n;x.pn=p===''?'':Math.max(0,+p);x.f=$('#sef').checked?1:(x.f===2?2:0);x.m=Math.max(5,+$('#sem').value||x.m);x.d=$('#sed').value.trim();SE='';sput(x);toast('Сохранено')}
+function svis(id){const x=sRec(id);x.vis=x.vis?0:1;sput(x)}
+function sdel(id){if(!confirm('Удалить услугу?'))return;put('V',sRec(id));rm('V',id);rSet()}
+async function siadd(id,inp){const x=sRec(id);x.im=(x.im||[]).slice();toast('Загрузка…');for(const f of[...inp.files].slice(0,5-x.im.length))x.im.push(await img(f,700,.68));sput(x)}
+function sidel(id,i){const x=sRec(id);x.im=x.im.slice();x.im.splice(i,1);sput(x)}
+function snew(){const n=$('#snn').value.trim(),p=$('#snp').value,m=+$('#snm').value||60,c=SCAT[+$('#snc').value];if(!n)return toast('Введите название');put('V',{id:'v'+Date.now(),n,g:c[0],e:c[1],ic:c[2],m:Math.max(5,m),d:'',im:[],vis:1,pn:p===''?'':+p,f:0,c:Date.now()});rSet();toast('Услуга добавлена')}
+
+/* ===== ЛИЧНАЯ СТРАНИЦА МАСТЕРА ===== */
+const MPD={nm:'Гуля',tag:'Владелица салона · мастер мужских стрижек',bio:'Я Гуля, владелица салона «DIAMOND». Делаю мужские стрижки, ухаживаю за бородой и усами, делаю брови.\nЯ люблю, когда клиент выходит из кресла уверенным в себе.\nПриходите. Мы вместе подберём форму, которая вам идёт.'};
+const mpC=()=>({...MPD,...(getI('MP','main')||{})});
+const mpPh=()=>col('MP').filter(x=>x.id!='main'&&x.im).sort((a,b)=>(b.c||b.u)-(a.c||a.u));
+function rMP(){const c=mpC(),ph=mpPh();$('#main').innerHTML=`<div class="hero"><h2>${esc(c.nm)}</h2><p>${esc(c.tag)}</p></div><div class="card mpq">${esc(c.bio).replace(/\n/g,'<br>')}</div>`
+ +(ph.length?`<h3>Из моих рабочих дней</h3>`+ph.map((x,i)=>`<figure class="mpf"><img src="${x.im}" alt="" onclick="lbo(mpPh().map(y=>y.im),${i})"><figcaption>${esc(x.cap||'')}</figcaption></figure>`).join(''):`<p class="mu">Фото с работы скоро появятся.</p>`)
+ +`<button class="btn" onclick="go('bot')">Записаться ко мне</button>`}
+function mpAdmin(){const c=mpC(),ph=mpPh();
+ return `<p class="mu" style="margin-top:0">Это ваша личная страница. Клиент видит её в меню «О мастере».</p>
+ <div class="card"><label>Имя</label><input class="f" id="mpn" value="${esc(c.nm)}"><label>Подзаголовок</label><input class="f" id="mpt" value="${esc(c.tag)}"><label>Текст о себе</label><textarea class="f" id="mpb" style="min-height:120px">${esc(c.bio)}</textarea><button class="btn" onclick="mpsave()">Сохранить текст</button></div>
+ <h3>Фото с подписями (${ph.length}/12)</h3>
+ ${ph.length<12?`<label class="btn" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:10px">${ico('camera',20)} Добавить фото<input type="file" accept="image/*" multiple hidden onchange="mpadd(this)"></label>`:''}
+ ${ph.map(x=>`<div class="card"><div class="mpa"><img src="${x.im}" alt="" onclick="lbo(mpPh().map(y=>y.im),${ph.indexOf(x)})"><input class="f" value="${esc(x.cap||'')}" placeholder="Подпись к фото" maxlength="140" onchange="mpcap('${x.id}',this.value)"></div><button class="btn s" style="margin-top:8px" onclick="if(confirm('Удалить фото?')){rm('MP','${x.id}');rSet()}">Удалить</button></div>`).join('')}`}
+function mpsave(){const x=getI('MP','main')||{id:'main'};x.nm=$('#mpn').value.trim()||MPD.nm;x.tag=$('#mpt').value.trim();x.bio=$('#mpb').value.trim()||MPD.bio;put('MP',x);toast('Сохранено')}
+async function mpadd(inp){const n=12-mpPh().length;toast('Загрузка…');for(const f of[...inp.files].slice(0,n))put('MP',{id:'m'+Date.now()+Math.random().toString(36).slice(2,5),im:await img(f,900,.72),cap:'',c:Date.now()});toast('Фото добавлено. Напишите подпись.');rSet()}
+function mpcap(id,v){const x=getI('MP',id);if(x){x.cap=v.trim();put('MP',x);toast('Подпись сохранена')}}
+async function genR(){const g=$('#gen');if(!g)return;const u=col('U'),left=180-(Math.floor(Date.now()/1000)%180),cs=await Promise.all(u.map(x=>totp(x.sec)));if(!$('#gen'))return;
+ g.innerHTML=u.length?u.map((x,i)=>`<div class="row" style="padding:8px 0;border-bottom:1px solid var(--bd)"><span><b>${esc(x.name)}</b><br><small class="mu">+${esc(x.phone)}</small></span><span style="text-align:right"><b style="font-size:26px;letter-spacing:4px;color:var(--p)">${cs[i]}</b><br><small class="mu">${Math.floor(left/60)}:${p2(left%60)}</small></span></div>`).join('')+`<div class="bar"><i style="width:${left/180*100}%"></i></div>`:'<p class="mu">Клиентов пока нет.</p>'}
+async function sadm(){const n=$('#adn').value.trim(),o=$('#ado').value,w=$('#adp').value,c=CF();if(!n||w.length<6)return toast('Имя обязательно. Пароль: минимум 6 символов');
+ if(!(await chk(c.an||c.wa,o)))return toast('Текущий пароль неверный');setCF({an:n,ah:await sha(w)});msave();$('#ado').value=$('#adp').value='';toast('Имя и пароль админа сохранены')}
+const mlo=()=>{mAuth=0;sv('dm_ma',null);sv('dm_role','c');sv('dm_tab','home');setRole('c')};
+setInterval(()=>{if(tab=='set'&&mAuth)genR()},1000);
+applyLang();if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+nav();R();sync();rt();setInterval(sync,10000);addEventListener('online',()=>{sync();rt()});
+
+</script></body></html>
